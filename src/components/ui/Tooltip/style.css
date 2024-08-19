@@ -1,0 +1,29 @@
+.azhura-tooltip {
+  @apply p-2 text-center overflow-hidden;
+
+  > .title {
+    @apply text-lg font-bold uppercase;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    letter-spacing: 1px;
+  }
+
+  > .body {
+    font-family: Inpin, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  }
+
+  > .overlay {
+    @apply absolute top-0 bg-foreground h-full;
+  }
+}
+
+.azhura-tooltip-content {
+  @apply p-0 relative rounded-xl overflow-hidden px-4;
+  transform: skew(-15deg);
+  &::before {
+    @apply content-['']  w-full h-full border-foreground/75 absolute inset-0 -z-10 rounded-xl;
+  }
+}
+
+.azhura-tooltip-base {
+  @apply relative;
+}

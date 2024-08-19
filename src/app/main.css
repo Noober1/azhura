@@ -1,0 +1,9 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+#home-content {
+  max-width: 2000px;
+  cursor: default;
+  position: relative;
+}

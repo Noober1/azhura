@@ -1,0 +1,8 @@
+.loading-screen {
+  @apply fixed z-50 items-center justify-center flex inset-0 bg-black;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+
+  > span {
+    @apply text-lg md:text-2xl lg:text-6xl -skew-x-6 uppercase tracking-wider;
+  }
+}

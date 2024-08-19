@@ -1,0 +1,45 @@
+.scrollToSide {
+  @apply w-full relative;
+}
+
+.contentWrapper {
+  @apply sticky top-0 h-screen max-h-[1000px] flex flex-col items-center overflow-hidden;
+}
+
+.title {
+  @apply my-8 w-full flex flex-col items-center sticky;
+}
+
+.title .bounce {
+  @apply text-5xl lg:text-7xl tracking-wider uppercase italic mb-4;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.title p {
+  @apply text-xl;
+  font-family: Inpin, "Arial Narrow Bold", sans-serif;
+}
+
+.scrollWrapper {
+  @apply w-full max-w-screen-2xl overflow-hidden;
+}
+
+.itemWrapper {
+  @apply py-2 text-nowrap w-full;
+}
+
+.item {
+  @apply inline-table;
+}
+
+.backgroundImage {
+  @apply absolute top-0 -z-10 w-full h-full flex items-center;
+}
+
+.backgroundImage::before {
+  @apply content-[""] absolute inset-0 backdrop-blur-md z-20 bg-background/75;
+}
+
+.backgroundImage img {
+  @apply min-w-[100vw] w-full;
+}

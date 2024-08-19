@@ -1,0 +1,41 @@
+.hero {
+  @apply w-full min-h-[250vh] flex flex-col justify-between bg-cover m-0 p-0  relative;
+  background-position: center;
+}
+
+.wrapper {
+  @apply sticky top-0;
+}
+
+.wrapper::before {
+  @apply content-[""] w-full h-[350px] absolute bottom-0 z-10;
+  background: linear-gradient(
+    0deg,
+    hsl(var(--ui-background)) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.brandWrapper {
+  @apply sticky bottom-0 z-10 flex items-center justify-center flex-col w-full h-screen;
+}
+
+.brand {
+  /* @apply  */
+}
+
+.backgroundWrapper {
+  @apply sticky top-0 overflow-hidden;
+}
+
+.background {
+  @apply w-full h-screen bg-cover bg-center bg-no-repeat;
+}
+
+.scrollBottomWrapper {
+  @apply sticky bottom-0 z-10 gap-2 flex-col flex items-center justify-center w-full;
+}
+
+.scrollBottomText {
+  @apply text-foreground dark:text-gray-500;
+}

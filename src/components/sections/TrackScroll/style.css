@@ -1,0 +1,119 @@
+.track-scroll {
+  @apply flex flex-col items-center;
+
+  .section {
+    @apply min-h-64 text-lg relative;
+    font-family: Inpin, sans-serif;
+
+    &.profile {
+      @apply pt-4 h-screen max-h-[1000px] w-full flex items-center justify-center overflow-hidden relative;
+
+      &::before,
+      &::after {
+        @apply content-[""] w-full h-1/4 absolute left-0 right-0;
+      }
+
+      &::before {
+        @apply top-0;
+        background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0) 0%,
+          hsl(var(--ui-background)) 100%
+        );
+      }
+
+      &::after {
+        @apply bottom-0 -z-10;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          hsl(var(--ui-background)) 100%
+        );
+      }
+
+      > .text-scroll-background {
+        @apply absolute top-1/2 left-0 w-full -z-10;
+        transform: rotate(70deg) translate(-25%, 75%);
+
+        .picture span {
+          width: 400px;
+        }
+
+        > * {
+          @apply mb-2;
+        }
+
+        span {
+          @apply opacity-75;
+          line-height: 0.7;
+          font-size: 200px;
+        }
+      }
+
+      > .profile-wrapper {
+        @apply container grid grid-cols-4 gap-5;
+
+        > .profile-picture {
+          @apply w-full h-full flex justify-center;
+        }
+
+        > .profile-text {
+          @apply col-span-4 lg:col-span-3 text-center lg:text-left;
+          > p {
+            @apply mb-4 font-extralight;
+          }
+
+          > h3 {
+            @apply text-4xl lg:text-8xl mb-4 tracking-wide;
+            font-family: Impact, sans-serif;
+          }
+        }
+      }
+    }
+  }
+
+  > *:not(:nth-last-child(1), :nth-last-child(2)) {
+    @apply mb-20;
+  }
+
+  > *:nth-last-child(2) {
+    @apply min-h-0 mb-10;
+  }
+
+  > .sticky-container {
+    @apply sticky w-screen left-0 bottom-0 py-2 text-center;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    white-space: pre-wrap;
+
+    > .text {
+      @apply uppercase italic text-7xl tracking-wider;
+      text-shadow: 2px 2px 0px hsl(var(--ui-background) / 0.5);
+    }
+
+    > .background {
+      @apply bg-slate-300 dark:bg-slate-900 w-0 absolute h-0 overflow-hidden;
+
+      > .background-text span {
+        @apply opacity-50 mr-6 !text-transparent;
+        background: url("/noise.png") repeat;
+        background-size: 4px;
+        background-position: top left;
+        background-clip: text;
+        line-height: 0.7;
+        font-size: 200px;
+      }
+
+      > .background-text.primary span {
+        @apply bg-primary;
+      }
+
+      > .background-text.secondary span {
+        @apply bg-secondary;
+      }
+
+      > .background-text.warning span {
+        @apply bg-warning;
+      }
+    }
+  }
+}

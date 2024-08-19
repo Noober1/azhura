@@ -1,0 +1,13 @@
+.titleText {
+  @apply w-screen max-w-sm px-4 sm:max-w-md md:max-w-lg lg:max-w-2xl mb-4;
+}
+
+.titleText svg {
+  width: 100%;
+  height: 100%;
+}
+
+.titleText path {
+  fill: hsl(var(--ui-foreground));
+  stroke: hsl(var(--ui-foreground));
+}
