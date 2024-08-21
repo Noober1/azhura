@@ -1,0 +1,37 @@
+.stickyContainer {
+  @apply sticky w-screen left-0 bottom-0 py-2 text-center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  white-space: pre-wrap;
+
+  > .text {
+    @apply uppercase italic text-7xl tracking-wider;
+    text-shadow: 2px 2px 0px hsl(var(--ui-background) / 0.5);
+  }
+
+  > .background {
+    @apply w-0 absolute h-0 overflow-hidden;
+
+    > .backgroundText span {
+      @apply opacity-50 mr-6 !text-transparent;
+      background-image: url("/strip-pattern.png");
+      background-repeat: repeat;
+      background-position: top left;
+      background-size: 10px;
+      background-clip: text;
+      line-height: 0.7;
+      font-size: 8rem;
+    }
+
+    &.primary {
+      @apply bg-primary;
+    }
+
+    &.secondary {
+      @apply bg-secondary;
+    }
+
+    &.warning {
+      @apply bg-warning;
+    }
+  }
+}

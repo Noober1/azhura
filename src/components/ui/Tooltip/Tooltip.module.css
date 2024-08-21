@@ -1,4 +1,4 @@
-.azhura-tooltip {
+.tooltip {
   @apply p-2 text-center overflow-hidden;
 
   > .title {
@@ -16,14 +16,14 @@
   }
 }
 
-.azhura-tooltip-content {
+.tooltipBase {
+  @apply relative;
+}
+
+.tooltipContent {
   @apply p-0 relative rounded-xl overflow-hidden px-4;
   transform: skew(-15deg);
   &::before {
     @apply content-['']  w-full h-full border-foreground/75 absolute inset-0 -z-10 rounded-xl;
   }
-}
-
-.azhura-tooltip-base {
-  @apply relative;
 }

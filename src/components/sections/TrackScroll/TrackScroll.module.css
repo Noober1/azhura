@@ -1,0 +1,43 @@
+.trackScroll {
+  @apply flex flex-col items-center;
+
+  .section {
+    @apply min-h-64 text-lg relative w-full;
+    font-family: Inpin, sans-serif;
+
+    &.profile {
+      @apply pt-4 h-screen max-h-[1000px] w-full flex items-center justify-center overflow-hidden relative;
+
+      &::before,
+      &::after {
+        @apply content-[""] w-full h-1/4 absolute left-0 right-0;
+      }
+
+      &::before {
+        @apply top-0;
+        background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0) 0%,
+          hsl(var(--ui-background)) 100%
+        );
+      }
+
+      &::after {
+        @apply bottom-0 -z-10;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          hsl(var(--ui-background)) 100%
+        );
+      }
+    }
+  }
+
+  > *:not(:nth-last-child(1), :nth-last-child(2)) {
+    @apply mb-20;
+  }
+
+  > *:nth-last-child(2) {
+    @apply min-h-0 mb-10;
+  }
+}

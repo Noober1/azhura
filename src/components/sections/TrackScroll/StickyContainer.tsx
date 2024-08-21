@@ -3,6 +3,7 @@ import TextSplitBouncing from "@/components/ui/text/TextSplitBouncing";
 import { AnimationControls, motion, useAnimation } from "framer-motion";
 import React, { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
+import styles from "./StickyContainer.module.css";
 
 interface StickyContainerProps {
   minimize: boolean;
@@ -48,9 +49,9 @@ const StickyContainer = ({
     }
   }, [backgroundControls, backgroundTextControls, minimize]);
   return (
-    <motion.div className="sticky-container">
+    <motion.div className={styles.stickyContainer}>
       <motion.div
-        className={twMerge("background", currentSection.color)}
+        className={twMerge(styles.background, styles[currentSection.color])}
         initial={{
           width: "100%",
           height: 0,
@@ -64,14 +65,14 @@ const StickyContainer = ({
         <motion.div
           key={currentSection.text}
           animate={backgroundTextControls}
-          className="background-text"
+          className={styles.backgroundText}
         >
           <TextSideScroll hoverEffect={false} baseVelocity={1}>
             {currentSection.text}
           </TextSideScroll>
         </motion.div>
       </motion.div>
-      <div className="text">
+      <div className={styles.text}>
         <TextSplitBouncing>{currentSection.text}</TextSplitBouncing>
       </div>
     </motion.div>

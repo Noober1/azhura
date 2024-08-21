@@ -1,4 +1,4 @@
-.loading-screen {
+.loadingScreen {
   @apply fixed z-50 items-center justify-center flex inset-0 bg-black;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 

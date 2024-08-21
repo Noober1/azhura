@@ -1,4 +1,4 @@
-import "@/components/ui/Tooltip/style.css";
+import styles from "./Tooltip.module.css";
 import React, { ReactNode } from "react";
 import { Tooltip as NextTooltip, Button } from "@nextui-org/react";
 import type { TooltipProps as NextTooltipProps } from "@nextui-org/react";
@@ -40,8 +40,8 @@ export const Tooltip = ({ children, title, body, ...props }: TooltipProps) => {
     <NextTooltip
       closeDelay={0}
       content={
-        <motion.div className="azhura-tooltip">
-          <div className="title">
+        <motion.div className={styles.tooltip}>
+          <div className={styles.title}>
             <TextSplitBouncing bounceHeight={5} initDelay={0.4}>
               {title}
             </TextSplitBouncing>
@@ -50,13 +50,13 @@ export const Tooltip = ({ children, title, body, ...props }: TooltipProps) => {
             <motion.div
               variants={tooltipVariants}
               animate="bodyOnView"
-              className="body"
+              className={styles.body}
             >
               {body}
             </motion.div>
           )}
           <motion.div
-            className="overlay"
+            className={styles.overlay}
             variants={tooltipVariants}
             initial="initial"
             animate="onView"
@@ -64,8 +64,8 @@ export const Tooltip = ({ children, title, body, ...props }: TooltipProps) => {
         </motion.div>
       }
       classNames={{
-        base: "azhura-tooltip-base",
-        content: "azhura-tooltip-content",
+        base: styles.tooltipBase,
+        content: styles.tooltipContent,
       }}
       {...props}
     >

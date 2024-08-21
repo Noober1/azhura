@@ -1,6 +1,6 @@
 "use client";
 
-import "@/components/layouts/style.css";
+import styles from "./LoadingScreen.module.css";
 import { motion } from "framer-motion";
 
 const LoadingScreen = () => {
@@ -17,7 +17,7 @@ const LoadingScreen = () => {
         top: "50%",
         display: "none",
       }}
-      className="loading-screen"
+      className={styles.loadingScreen}
       viewport={{
         once: true,
       }}
