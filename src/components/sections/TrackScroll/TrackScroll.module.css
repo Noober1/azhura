@@ -3,7 +3,10 @@
 
   .section {
     @apply min-h-64 text-lg relative w-full;
-    font-family: Inpin, sans-serif;
+
+    p {
+      font-family: Inpin, sans-serif;
+    }
 
     &.profile {
       @apply pt-4 h-screen max-h-[1000px] w-full flex items-center justify-center overflow-hidden relative;

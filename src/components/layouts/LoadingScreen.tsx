@@ -16,6 +16,9 @@ const LoadingScreen = () => {
         height: 0,
         top: "50%",
         display: "none",
+        transition: {
+          delay: 1,
+        },
       }}
       className={styles.loadingScreen}
       viewport={{

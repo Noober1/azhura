@@ -10,11 +10,11 @@ import Link from "next/link";
 
 const thumbnailVariant: Variants = {
   initial: {
-    translateY: 100,
+    height: 0,
     opacity: 0,
   },
   onHover: {
-    translateY: 0,
+    height: "fit-content",
     opacity: 1,
   },
 };
@@ -120,11 +120,11 @@ const ThumbnailCard = ({
             </motion.span>
           )}
         </motion.div>
-        <motion.article variants={thumbnailVariant} className={styles.content}>
+        <motion.article className={styles.content}>
           <motion.header>
             <h2>{title}</h2>
           </motion.header>
-          <motion.p>{description}</motion.p>
+          <motion.p variants={thumbnailVariant}>{description}</motion.p>
         </motion.article>
       </motion.div>
     </motion.div>

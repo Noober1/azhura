@@ -1,5 +1,5 @@
 .main {
-  /* @apply overflow-hidden; */
+  @apply overflow-hidden;
 }
 
 .scrollWrapper {

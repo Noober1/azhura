@@ -47,7 +47,7 @@ const TrackScroll = () => {
         <AboutMe />
       </motion.div>
       <motion.div
-        className={styles.section}
+        className={twMerge(styles.section, "!mb-0")}
         onViewportEnter={() =>
           setSection({
             color: "warning",

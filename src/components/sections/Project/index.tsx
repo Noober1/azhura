@@ -12,7 +12,7 @@ import { IconName } from "@/lib/constants";
 
 const horizontalScrollItem: HorizontalScrollItem[] = [
   {
-    title: "PSB SMK Bina Taruna Jalancagak",
+    title: "PSB Bintar",
     description:
       "Portal page of Online student registration system SMK Bina Taruna Jalancagak",
     image: photo1,
@@ -46,7 +46,7 @@ const horizontalScrollItem: HorizontalScrollItem[] = [
     ],
   },
   {
-    title: "SMK Bina Taruna Jalancagak",
+    title: "Bintar Homepage",
     description: "Personal homepage of SMK Bina Taruna Jalancagak",
     image: photo3,
     website: "https://smk.binataruna.sch.id",

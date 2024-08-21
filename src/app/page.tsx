@@ -1,7 +1,6 @@
 import "@/app/main.css";
 import { ReactLenis } from "@/lib/lenis-scroll";
 import TrackScroll from "@/components/sections/TrackScroll";
-// import ScrollToSide from "@/components/sections/ScrollToSide";
 import Hero from "@/components/sections/Hero";
 import LoadingScreen from "@/components/layouts/LoadingScreen";
 import { ThemeSwitcher } from "@/components/buttons/ThemeSwitcher";
@@ -19,9 +18,9 @@ const RootPage = () => {
           <div className="bg-red-500 h-screen">heheh</div>
         </main>
       </div>
-      {/* <div className="fixed top-0 left-0 z-20">
+      <div className="fixed top-0 left-0 z-20">
         <ThemeSwitcher />
-      </div> */}
+      </div>
       <LoadingScreen />
     </ReactLenis>
   );

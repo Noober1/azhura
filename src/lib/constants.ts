@@ -17,3 +17,31 @@ export enum IconName {
   ChakraUI = "chakra-ui.svg",
   FramerMotion = "framer_dark.svg",
 }
+
+interface EducationList {
+  startDate: string;
+  endDate: string;
+  title: string;
+  description: string;
+}
+
+const educationList: EducationList[] = [
+  {
+    startDate: "March 2017",
+    endDate: "April 2018",
+    title: "Entah bootcamp",
+    description: "Manakutau",
+  },
+  {
+    startDate: "May 2018",
+    endDate: "July 2018",
+    title: "Coba coba",
+    description: "Ya iya",
+  },
+  {
+    startDate: "December 2018",
+    endDate: "October 2019",
+    title: "Coba coba",
+    description: "Ya iya",
+  },
+];

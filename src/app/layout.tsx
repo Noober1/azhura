@@ -1,6 +1,5 @@
 import "@/app/globals.css";
 import ThemeProvider from "@/app/ThemeProvider";
-import { LayoutComponent } from "@/types/main";
 import { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 

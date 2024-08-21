@@ -1,0 +1,76 @@
+.main {
+  @apply overflow-auto px-2;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .line {
+    td {
+      @apply relative;
+
+      > div {
+        @apply flex items-center cursor-pointer;
+        padding-top: 1.4rem;
+        padding-bottom: 1.4rem;
+        width: 30px;
+        height: 4rem;
+      }
+    }
+
+    td:hover .dots {
+      @apply opacity-0;
+    }
+
+    .monthLabel {
+      @apply opacity-0;
+    }
+
+    td:hover .monthLabel {
+      @apply opacity-100;
+    }
+
+    .dots {
+      @apply block w-1 rounded-full aspect-square bg-foreground;
+    }
+
+    .yearLabel,
+    .monthLabel {
+      @apply absolute top-3 -left-1;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+    }
+  }
+
+  .education {
+    @apply pb-2;
+  }
+
+  .education > td {
+    @apply pr-2;
+  }
+
+  .itemWrapper {
+    @apply pr-2;
+
+    time {
+      @apply my-2;
+    }
+
+    div {
+      @apply w-full max-h-40 relative p-2 pl-0 bg-foreground text-background;
+      section {
+        @apply sticky h-24 overflow-hidden left-0 w-fit max-w-screen-sm p-2;
+
+        h3 {
+          @apply text-xl lg:text-2xl uppercase tracking-wide;
+          font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+        }
+
+        p {
+          @apply h-full overflow-hidden text-sm pb-2;
+        }
+      }
+    }
+  }
+}
