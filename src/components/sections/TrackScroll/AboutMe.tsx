@@ -4,11 +4,12 @@ import React from "react";
 import SocialMediaIcons from "@/components/sections/Hero/SocialMediaIcons";
 import Image from "next/image";
 import profilePicture from "@/images/profile-picture.png";
+import styles from "./AboutMe.module.css";
 
 const AboutMe = () => {
   return (
     <>
-      <div className="text-scroll-background">
+      <div className={styles.textScrollBackground}>
         <TextSideScroll
           className="uppercase italic text-7xl tracking-wider text-foreground dark:text-gray-500"
           hoverEffect={false}
@@ -18,7 +19,7 @@ const AboutMe = () => {
           CUCU RUHIYATNA
         </TextSideScroll>
         <TextSideScroll
-          className="picture"
+          className={styles.picture}
           hoverEffect={false}
           baseVelocity={-2}
         >
@@ -42,15 +43,15 @@ const AboutMe = () => {
           PROFILE
         </TextSideScroll>
       </div>
-      <div className="profile-wrapper">
-        <div className="profile-picture" />
-        <div className="profile-text">
+      <div className={styles.profileWrapper}>
+        <div className={styles.profilePicture} />
+        <div className={styles.profileText}>
           <h3>
             <TextSplitBouncing viewportMargin="-75% 0% 75% 0%">
               Hi there,
             </TextSplitBouncing>
           </h3>
-          <p>
+          <p className="text">
             I&apos;m Cucu Ruhiyatna. A{" "}
             <em className="text-primary">full-stack dev</em> and a{" "}
             <em className="text-danger">hardcore otaku</em> through and through,

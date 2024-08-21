@@ -1,0 +1,27 @@
+.main {
+  /* @apply overflow-hidden; */
+}
+
+.scrollWrapper {
+  @apply text-nowrap;
+}
+
+.itemWrapper {
+  @apply inline-flex flex-col gap-2 aspect-square my-3;
+
+  > img {
+    @apply w-full transition-all duration-500 aspect-square p-6 grayscale;
+  }
+
+  > img:hover {
+    @apply grayscale-0 p-0;
+  }
+
+  > img:hover + label {
+    @apply opacity-100;
+  }
+
+  > label {
+    @apply block transition-all opacity-0 duration-500 text-center w-full;
+  }
+}

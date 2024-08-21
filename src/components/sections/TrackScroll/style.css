@@ -2,7 +2,7 @@
   @apply flex flex-col items-center;
 
   .section {
-    @apply min-h-64 text-lg relative;
+    @apply min-h-64 text-lg relative w-full;
     font-family: Inpin, sans-serif;
 
     &.profile {
@@ -30,45 +30,6 @@
           hsl(var(--ui-background)) 100%
         );
       }
-
-      > .text-scroll-background {
-        @apply absolute top-1/2 left-0 w-full -z-10;
-        transform: rotate(70deg) translate(-25%, 75%);
-
-        .picture span {
-          width: 400px;
-        }
-
-        > * {
-          @apply mb-2;
-        }
-
-        span {
-          @apply opacity-75;
-          line-height: 0.7;
-          font-size: 200px;
-        }
-      }
-
-      > .profile-wrapper {
-        @apply container grid grid-cols-4 gap-5;
-
-        > .profile-picture {
-          @apply w-full h-full flex justify-center;
-        }
-
-        > .profile-text {
-          @apply col-span-4 lg:col-span-3 text-center lg:text-left;
-          > p {
-            @apply mb-4 font-extralight;
-          }
-
-          > h3 {
-            @apply text-4xl lg:text-8xl mb-4 tracking-wide;
-            font-family: Impact, sans-serif;
-          }
-        }
-      }
     }
   }
 
@@ -91,27 +52,28 @@
     }
 
     > .background {
-      @apply bg-slate-300 dark:bg-slate-900 w-0 absolute h-0 overflow-hidden;
+      @apply w-0 absolute h-0 overflow-hidden;
 
       > .background-text span {
         @apply opacity-50 mr-6 !text-transparent;
-        background: url("/noise.png") repeat;
-        background-size: 4px;
+        background-image: url("/strip-pattern.png");
+        background-repeat: repeat;
         background-position: top left;
+        background-size: 10px;
         background-clip: text;
         line-height: 0.7;
-        font-size: 200px;
+        font-size: 8rem;
       }
 
-      > .background-text.primary span {
+      &.primary {
         @apply bg-primary;
       }
 
-      > .background-text.secondary span {
+      &.secondary {
         @apply bg-secondary;
       }
 
-      > .background-text.warning span {
+      &.warning {
         @apply bg-warning;
       }
     }

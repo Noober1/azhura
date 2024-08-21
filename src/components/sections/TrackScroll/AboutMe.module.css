@@ -1,0 +1,38 @@
+.textScrollBackground {
+  @apply absolute top-1/2 left-0 w-full -z-10;
+  transform: rotate(70deg) translate(-25%, 75%);
+
+  > .picture span {
+    width: 400px;
+  }
+
+  > * {
+    @apply mb-2;
+  }
+
+  span {
+    @apply opacity-75;
+    line-height: 0.7;
+    font-size: 200px;
+  }
+}
+
+.profileWrapper {
+  @apply container grid grid-cols-4 gap-5;
+
+  > .profilePicture {
+    @apply w-full h-full flex justify-center;
+  }
+
+  > .profileText {
+    @apply col-span-4 lg:col-span-3 text-center lg:text-left;
+    > p {
+      @apply mb-4 font-extralight;
+    }
+
+    > h3 {
+      @apply text-4xl lg:text-8xl mb-4 tracking-wide;
+      font-family: Impact, sans-serif;
+    }
+  }
+}

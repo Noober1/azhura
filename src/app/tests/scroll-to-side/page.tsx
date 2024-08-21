@@ -5,7 +5,7 @@ const page = () => {
   return (
     <div>
       <div className="w-full h-screen bg-red-500 block"></div>
-      <ScrollToSide />
+      {/* <ScrollToSide /> */}
       <div className="w-full h-screen bg-green-500 block"></div>
     </div>
   );

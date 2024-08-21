@@ -38,6 +38,7 @@ const tooltipVariants: Variants = {
 export const Tooltip = ({ children, title, body, ...props }: TooltipProps) => {
   return (
     <NextTooltip
+      closeDelay={0}
       content={
         <motion.div className="azhura-tooltip">
           <div className="title">

@@ -50,7 +50,7 @@ const StickyContainer = ({
   return (
     <motion.div className="sticky-container">
       <motion.div
-        className="background"
+        className={twMerge("background", currentSection.color)}
         initial={{
           width: "100%",
           height: 0,
@@ -64,7 +64,7 @@ const StickyContainer = ({
         <motion.div
           key={currentSection.text}
           animate={backgroundTextControls}
-          className={twMerge("background-text", currentSection.color)}
+          className="background-text"
         >
           <TextSideScroll hoverEffect={false} baseVelocity={1}>
             {currentSection.text}

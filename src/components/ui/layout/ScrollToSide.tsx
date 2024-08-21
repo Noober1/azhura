@@ -14,6 +14,8 @@ export interface HorizontalScrollItem {
   title: string;
   description: string;
   image: StaticImageData;
+  repoLink?: string;
+  website?: string;
   techStack?: {
     name: string;
     iconName: string;

@@ -6,12 +6,20 @@
   @apply overflow-hidden aspect-video flex items-center justify-center rounded-2xl relative;
 }
 
-.wrapper img {
-  @apply opacity-100;
-}
-
 .content {
   @apply absolute top-0 left-0 w-full h-full flex flex-col justify-end p-2 lg:p-4 pointer-events-none;
+}
+
+.wrapper:hover .imageWrapper::after {
+  @apply backdrop-brightness-50;
+}
+
+.imageWrapper {
+  @apply relative;
+}
+
+.imageWrapper::after {
+  @apply content-[''] inset-0 absolute transition-all duration-500;
 }
 
 .decorative {
@@ -46,13 +54,26 @@
 }
 
 .techStack {
-  @apply absolute w-full h-16 top-0 left-0 pt-2 pl-2;
+  @apply absolute whitespace-break-spaces top-0 left-0 pt-2 pl-2 w-3/4;
 }
 
 .techStack div {
-  @apply inline-block mr-1;
+  @apply inline-block mr-1 mb-1;
 }
 
 .techStack img {
   @apply h-12 aspect-square inline-block bg-background/60 rounded-lg p-2;
+}
+
+.thumbnailLink {
+  @apply flex flex-col items-end gap-2 absolute top-0 right-0 w-40 h-full p-2 pr-0;
+}
+
+.thumbnailLink > span > a {
+  @apply flex flex-row items-center bg-background/50 rounded-l-lg;
+  font-family: Inpin, "Arial Narrow Bold", sans-serif;
+}
+
+.linkButton {
+  @apply p-2 aspect-square w-16;
 }

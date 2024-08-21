@@ -8,51 +8,66 @@ import photo1 from "@/images/photo1.jpg";
 import photo2 from "@/images/photo2.jpg";
 import photo3 from "@/images/photo3.jpg";
 import photo4 from "@/images/photo4.jpg";
+import { IconName } from "@/lib/constants";
 
 const horizontalScrollItem: HorizontalScrollItem[] = [
   {
-    title: "bintar-psb",
+    title: "PSB SMK Bina Taruna Jalancagak",
     description:
-      "Aplikasi Penerimaan Siswa Baru(PSB) SMK Bina Taruna Jalancagak",
+      "Portal page of Online student registration system SMK Bina Taruna Jalancagak",
     image: photo1,
+    website: "https://psb.binataruna.sch.id",
+    repoLink: "https://github.com/Noober1/new-psb",
     techStack: [
-      { name: "Next.js", iconName: "nextjs_icon_dark.svg" },
-      { name: "React", iconName: "react.svg" },
-      { name: "Typescript", iconName: "typescript.svg" },
-      { name: "Material UI", iconName: "materialui.svg" },
-      { name: "React Query", iconName: "reactquery.svg" },
-      { name: "Redux", iconName: "redux.svg" },
+      { name: "Next.js", iconName: IconName.NextJS },
+      { name: "React", iconName: IconName.ReactJS },
+      { name: "Typescript", iconName: IconName.Typescript },
+      { name: "Material UI", iconName: IconName.MaterialUI },
+      { name: "React Query", iconName: IconName.ReactQuery },
+      { name: "Redux", iconName: IconName.Redux },
     ],
   },
   {
     title: "bintar-ppdb",
+    website: "https://ppdb.binataruna.sch.id",
+    repoLink: "https://github.com/Noober1/bintar-ppdb",
     description:
-      "Aplikasi management Penerimaan Siswa Baru(PSB) SMK Bina Taruna Jalancagak",
+      "Online management system for the New Student Admissions SMK Bina Taruna Jalancagak",
     image: photo2,
     techStack: [
-      { name: "Next.js", iconName: "nextjs_icon_dark.svg" },
-      { name: "React", iconName: "react.svg" },
-      { name: "Typescript", iconName: "typescript.svg" },
-      { name: "Material UI", iconName: "materialui.svg" },
-      { name: "Redux", iconName: "redux.svg" },
-      { name: "React Query", iconName: "reactquery.svg" },
-      { name: "Tailwind CSS", iconName: "tailwindcss.svg" },
+      { name: "Next.js", iconName: IconName.NextJS },
+      { name: "React", iconName: IconName.ReactJS },
+      { name: "Prisma.js", iconName: IconName.PrismaJS },
+      { name: "Typescript", iconName: IconName.Typescript },
+      { name: "Material UI", iconName: IconName.MaterialUI },
+      { name: "Redux", iconName: IconName.Redux },
+      { name: "React Query", iconName: IconName.ReactQuery },
+      { name: "Tailwind CSS", iconName: IconName.TailwindCSS },
     ],
   },
   {
-    title: "bintar-homepage",
-    description: "Situs web resmi SMK Bina Taruna Jalancagak",
+    title: "SMK Bina Taruna Jalancagak",
+    description: "Personal homepage of SMK Bina Taruna Jalancagak",
     image: photo3,
+    website: "https://smk.binataruna.sch.id",
+    repoLink: "https://github.com/Noober1/bintar-homepage",
     techStack: [
-      { name: "React", iconName: "react.svg" },
-      { name: "Material UI", iconName: "materialui.svg" },
+      { name: "React", iconName: IconName.ReactJS },
+      { name: "Material UI", iconName: IconName.MaterialUI },
     ],
   },
   {
-    title: "Photo4",
+    title: "CeBeTeeS",
+
     description:
-      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, magni?",
+      "CBT is a software application designed for computer-based test. The integration of web socket technology enables real-time, interactive testing experiences.",
     image: photo4,
+    techStack: [
+      { name: "Node.js", iconName: IconName.NodeJS },
+      { name: "Express.js", iconName: IconName.ExpressJS },
+      { name: "MongoDB", iconName: IconName.MongoDB },
+      { name: "Bootstrap", iconName: IconName.Bootstrap },
+    ],
   },
 ];
 
