@@ -6,10 +6,10 @@ import {
   useTransform,
   useAnimationFrame,
   motion,
+  wrap,
 } from "framer-motion";
 import React, { ReactNode, useRef } from "react";
 import { twMerge } from "tailwind-merge";
-import { wrap } from "@motionone/utils";
 import styles from "./TextSideScroll.module.css";
 
 interface ParallaxProps {
