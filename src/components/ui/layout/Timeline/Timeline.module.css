@@ -1,20 +1,27 @@
 .main {
   @apply overflow-auto px-2;
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
 
   &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-moz-scrollbar {
     display: none;
   }
 
   .line {
     td {
       @apply relative;
+      min-width: 30px;
 
       > div {
         @apply flex items-center cursor-pointer;
-        padding-top: 1.4rem;
-        padding-bottom: 1.4rem;
+        padding-top: 1.6rem;
+        padding-bottom: 1.6rem;
         width: 30px;
-        height: 4rem;
+        height: 6rem;
       }
     }
 
@@ -23,7 +30,7 @@
     }
 
     .monthLabel {
-      @apply opacity-0;
+      @apply opacity-0 !top-7;
     }
 
     td:hover .monthLabel {
@@ -36,7 +43,7 @@
 
     .yearLabel,
     .monthLabel {
-      @apply absolute top-3 -left-1;
+      @apply absolute top-6 -left-1;
       writing-mode: vertical-rl;
       text-orientation: mixed;
     }
@@ -51,14 +58,60 @@
   }
 
   .itemWrapper {
-    @apply pr-2;
+    @apply pr-2 relative;
 
     time {
       @apply my-2;
     }
 
-    div {
-      @apply w-full max-h-40 relative p-2 pl-0 bg-foreground text-background;
+    > div.textBackground {
+      @apply absolute top-0 left-0 bottom-0 right-2 bg-foreground;
+
+      clip-path: polygon(
+        calc(100% - 2rem) 0,
+        100% 2rem,
+        100% 100%,
+        0 calc(100% + 2rem),
+        0 -2rem
+      );
+      background-repeat: repeat;
+      background-attachment: fixed;
+      background-size: 12px;
+
+      &::before {
+        @apply content-[""] absolute left-0 -z-10;
+
+        width: 0;
+        height: 0;
+      }
+
+      &.bottom::before {
+        @apply bottom-[-0.630rem];
+        border-left: 0.66rem solid transparent;
+        border-right: 0.66rem solid transparent;
+        border-top: 0.66rem solid hsl(var(--ui-foreground));
+      }
+
+      &.top::before {
+        @apply top-[-0.626rem];
+        border-left: 0.66rem solid transparent;
+        border-right: 0.66rem solid transparent;
+        border-bottom: 0.66rem solid hsl(var(--ui-foreground));
+      }
+
+      > div {
+        mask-image: linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 1) 0%,
+          transparent calc(25% + 50rem),
+          transparent
+        );
+      }
+    }
+
+    > div.textWrapper {
+      @apply w-full max-h-40 relative p-2 pl-0 text-background;
+
       section {
         @apply sticky h-24 overflow-hidden left-0 w-fit max-w-screen-sm p-2;
 

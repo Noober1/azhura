@@ -1,6 +1,5 @@
 .textScrollBackground {
-  @apply absolute top-1/2 left-0 w-full -z-10;
-  transform: rotate(70deg) translate(-25%, 75%);
+  @apply absolute top-1/2 rotate-[70deg] -translate-y-1/4 -translate-x-1/4 left-0 w-full -z-10;
 
   > .picture span {
     width: 400px;
@@ -27,11 +26,11 @@
   > .profileText {
     @apply col-span-4 lg:col-span-3 text-center lg:text-left;
     > p {
-      @apply mb-4 font-extralight;
+      @apply mb-4 font-extralight px-2 lg:px-0;
     }
 
     > h3 {
-      @apply text-4xl lg:text-8xl mb-4 tracking-wide;
+      @apply text-5xl lg:text-8xl mb-4 tracking-wide;
       font-family: Impact, sans-serif;
     }
   }

@@ -1,5 +1,5 @@
 .main {
-  @apply overflow-hidden w-full;
+  @apply overflow-hidden w-full mb-28 flex flex-col items-center;
   mask-image: linear-gradient(
     90deg,
     transparent 0%,

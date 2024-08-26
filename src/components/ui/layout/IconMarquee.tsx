@@ -51,7 +51,7 @@ const IconMarquee = ({ items }: { items: Items[] }) => {
       transition: {
         bounce: false,
         ease: "linear",
-        duration: 10,
+        duration: 20,
         repeat: Infinity,
       },
     },

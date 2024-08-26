@@ -42,7 +42,7 @@ const HeroSection = () => {
           />
         </div>
         <div className={styles.brandWrapper}>
-          <TopbarMenu />
+          {/* <TopbarMenu /> */}
           <motion.div className={styles.brand}>
             <TitleText progress={scrollYProgress} />
           </motion.div>

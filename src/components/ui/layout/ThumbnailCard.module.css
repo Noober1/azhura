@@ -36,6 +36,7 @@
 }
 
 .thumbnailCard:hover .content header h2 {
+  @apply text-foreground;
   text-shadow: none;
 }
 

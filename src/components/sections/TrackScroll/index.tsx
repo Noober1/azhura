@@ -67,7 +67,9 @@ const TrackScroll = () => {
             text: "My Experience",
           })
         }
-        viewport={sectionViewport}
+        viewport={{
+          margin: "0% 0% -25% 0%",
+        }}
       >
         <MyExperience />
       </motion.div>

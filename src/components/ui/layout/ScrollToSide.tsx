@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "./ScrollToSide.module.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { twMerge } from "tailwind-merge";
-import useWindowDimensions from "@/hooks/useWindowDimention";
+import useWindowDimension from "@/hooks/useWindowDimension";
 import { StaticImageData } from "next/image";
 import ThumbnailCard from "@/components/ui/layout/ThumbnailCard";
 import TextSplitBouncing from "../text/TextSplitBouncing";
@@ -41,7 +41,7 @@ const ScrollToSide = ({
   const [currentImage, setcurrentImage] = useState<HorizontalScrollItem>(
     items[0]
   );
-  const { width } = useWindowDimensions();
+  const { width } = useWindowDimension();
   const parentRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: parentRef,

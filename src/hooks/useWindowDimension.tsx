@@ -19,7 +19,7 @@ export default function useWindowDimensions() {
       setWindowDimensions(getWindowDimensions());
     }
 
-    handleResize(); // <-- invoke this on component mount
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {

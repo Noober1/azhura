@@ -8,10 +8,9 @@ import {
   motion,
 } from "framer-motion";
 import React, { ReactNode, useRef } from "react";
-
 import { twMerge } from "tailwind-merge";
-
 import { wrap } from "@motionone/utils";
+import styles from "./TextSideScroll.module.css";
 
 interface ParallaxProps {
   children: string | ReactNode;
@@ -75,9 +74,9 @@ function TextSideScroll({
    * dynamically generated number of children.
    */
   return (
-    <div className={twMerge("parallax", className)}>
+    <div className={twMerge(styles.parallax, className)}>
       <motion.div
-        className="scroller"
+        className={styles.scroller}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         viewport={{

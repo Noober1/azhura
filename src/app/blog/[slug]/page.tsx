@@ -38,7 +38,7 @@ const PostPage: PageWithParam = async ({ params }) => {
   const components = useMDXComponents({});
   const data = await getPostData(params.slug);
 
-  if (!data) return <div>Data not found</div>;
+  if (!data) return <div>Post not found</div>;
   return (
     <article className="prose dark:prose-invert prose-code:after:content-[''] prose-code:before:content-['']">
       <h1>{data.title}</h1>

@@ -1,49 +1,49 @@
 import IconMarquee, {
   IconMarqueeItems,
 } from "@/components/ui/layout/IconMarquee";
-import { IconName } from "@/lib/constants";
+import { TechIconsDark } from "@/lib/constants";
 import React from "react";
 
 const items: IconMarqueeItems = [
   {
     name: "a",
-    icon: IconName.NodeJS,
+    icon: TechIconsDark.NodeJS,
   },
   {
     name: "b",
-    icon: IconName.ReactJS,
+    icon: TechIconsDark.ReactJS,
   },
   {
     name: "c",
-    icon: IconName.ExpressJS,
+    icon: TechIconsDark.ExpressJS,
   },
   {
     name: "d",
-    icon: IconName.MongoDB,
+    icon: TechIconsDark.MongoDB,
   },
   {
     name: "e",
-    icon: IconName.Bootstrap,
+    icon: TechIconsDark.Bootstrap,
   },
   {
     name: "f",
-    icon: IconName.MaterialUI,
+    icon: TechIconsDark.MaterialUI,
   },
   {
     name: "f",
-    icon: IconName.TailwindCSS,
+    icon: TechIconsDark.TailwindCSS,
   },
   {
     name: "f",
-    icon: IconName.ReactQuery,
+    icon: TechIconsDark.ReactQuery,
   },
   {
     name: "f",
-    icon: IconName.Redux,
+    icon: TechIconsDark.Redux,
   },
   {
     name: "f",
-    icon: IconName.Typescript,
+    icon: TechIconsDark.Typescript,
   },
 ];
 

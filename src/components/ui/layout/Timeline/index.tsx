@@ -1,8 +1,25 @@
 "use client";
 
-import { motion, MotionValue, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  MotionValue,
+  useMotionValueEvent,
+  Variants,
+} from "framer-motion";
 import styles from "./Timeline.module.css";
-import { forwardRef, Ref, useImperativeHandle, useRef } from "react";
+import {
+  forwardRef,
+  ReactNode,
+  Ref,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
+import TextSideScroll from "../../text/TextSideScroll";
+import { twMerge } from "tailwind-merge";
+import { stripPattern } from "@/lib/constants";
+import { useTheme } from "next-themes";
 
 interface TimelineProps {
   months: string[];
@@ -13,33 +30,171 @@ export interface Handles extends Partial<HTMLDivElement> {
   fullScroll: number;
 }
 
-const Timeline = ({ months, scroll }: TimelineProps, ref: Ref<Handles>) => {
-  const Lines = () => {
-    return (
-      <>
-        {months.map((item, index) => {
-          const label = item.split(" ");
-          return (
-            <td key={index}>
-              <div>
-                {label[0] === "January" ? (
-                  <label className={styles.yearLabel}>{label[1]}</label>
-                ) : (
-                  <>
-                    <label className={styles.dots} />
-                    <div className={styles.monthLabel}>
-                      {label[0].substring(0, 3)}
-                    </div>
-                  </>
-                )}
-              </div>
-            </td>
-          );
-        })}
-      </>
-    );
-  };
+interface ItemProps {
+  colSpan?: number;
+  className?: string;
+  title: string;
+  date: string;
+  description: ReactNode | string;
+  backgroundText?: string;
+  arrowPosition?: "top" | "bottom";
+}
 
+const Item = ({
+  colSpan,
+  className,
+  title,
+  date,
+  description,
+  arrowPosition = "bottom",
+  backgroundText = "Education",
+}: ItemProps) => {
+  const [backgroundValue, sestBackgroundValue] = useState<string>(
+    stripPattern("000")
+  );
+  const { theme } = useTheme();
+  useEffect(() => {
+    sestBackgroundValue(stripPattern(theme === "dark" ? "FFF" : "000"));
+  }, [theme]);
+
+  return (
+    <td colSpan={colSpan} className={styles.itemWrapper}>
+      <div
+        className={twMerge(styles.textBackground, styles[arrowPosition])}
+        style={{
+          backgroundImage: `url("${backgroundValue}")`,
+        }}
+      >
+        <TextSideScroll
+          className="[&>div>span]:text-[8.6rem] [&>div>span]:text-primary/50 h-full"
+          baseVelocity={4}
+        >
+          {backgroundText}
+        </TextSideScroll>
+      </div>
+      <motion.div className={twMerge(styles.textWrapper, className)}>
+        <section>
+          <header>
+            <h3>{title}</h3>
+            <time>{date}</time>
+          </header>
+          <p>{description}</p>
+        </section>
+      </motion.div>
+    </td>
+  );
+};
+
+const Lines = ({ data }: { data: string[] }) => {
+  return (
+    <>
+      {data.map((item, index) => {
+        const label = item.split(" ");
+        return (
+          <td key={index}>
+            <div>
+              {label[0] === "January" ? (
+                <label className={styles.yearLabel}>{label[1]}</label>
+              ) : (
+                <>
+                  <label className={styles.dots} />
+                  <div className={styles.monthLabel}>
+                    {label[0].substring(0, 3)}
+                  </div>
+                </>
+              )}
+            </div>
+          </td>
+        );
+      })}
+    </>
+  );
+};
+
+interface TimelineContent {
+  colspan: number;
+  content?: Omit<ItemProps, "colSpan">;
+}
+
+const educationItems: TimelineContent[] = [
+  {
+    colspan: 6,
+  },
+  {
+    colspan: 12 * 3 - 1,
+    content: {
+      title: "SMK Bina Taruna Jalancagak",
+      date: "July 2012 - June 2015",
+      description: "Teknik Komputer dan Jaringan",
+    },
+  },
+  { colspan: 3 },
+  {
+    colspan: 12 * 6 + 3,
+    content: {
+      title: "STMIK Subang",
+      date: "September 2017 - 2021",
+      description: "Sistem Informasi (SI)",
+    },
+  },
+];
+
+const careerTimeline: TimelineContent[] = [
+  {
+    colspan: 42,
+    content: {
+      title: "Part-time",
+      date: "January 2012 - June 2015",
+      description: "Life as a blogger",
+    },
+  },
+  { colspan: 8 },
+  {
+    colspan: 12 * 6 + 4,
+    content: {
+      title: "SMK Bina Taruna Jalancagak",
+      date: "January 2012 - June 2015",
+      description: "Lab assistance and administrator",
+    },
+  },
+  { colspan: 0 },
+  {
+    colspan: 999,
+    content: {
+      title: "Freelancer",
+      date: "August 2022 - Present",
+      description: "Full-stack developer",
+    },
+  },
+];
+
+const TimelineContent = ({
+  data,
+  arrowPosition,
+  backgroundText,
+}: {
+  data: TimelineContent[];
+  arrowPosition: "top" | "bottom";
+  backgroundText?: string;
+}) => (
+  <>
+    {data.map((item, index) =>
+      item.content ? (
+        <Item
+          arrowPosition={arrowPosition}
+          key={index}
+          backgroundText={backgroundText}
+          colSpan={item.colspan}
+          {...item.content}
+        />
+      ) : (
+        <td key={index} colSpan={item.colspan} />
+      )
+    )}
+  </>
+);
+
+const Timeline = ({ months, scroll }: TimelineProps, ref: Ref<Handles>) => {
   const entah = useRef<HTMLDivElement>(null);
 
   useMotionValueEvent(scroll, "change", (value) => {
@@ -57,84 +212,17 @@ const Timeline = ({ months, scroll }: TimelineProps, ref: Ref<Handles>) => {
       <table>
         <tbody>
           <tr className={styles.education}>
-            <td colSpan={6} />
-            <td colSpan={12 * 3 - 1} className={styles.itemWrapper}>
-              <div>
-                <section>
-                  <header>
-                    <h3>SMK Bina Taruna Jalancagak</h3>
-                    <time>July 2012 - June 2015</time>
-                  </header>
-                  <p>Teknik Komputer dan Jaringan(TKJ)</p>
-                </section>
-              </div>
-            </td>
-            <td />
-            <td colSpan={12 * 4} className={styles.itemWrapper}>
-              <div>
-                <section>
-                  <header>
-                    <h3>STMIK Subang</h3>
-                    <time>September 2017 - 2021</time>
-                  </header>
-                  <p>Sistem Informasi (SI)</p>
-                </section>
-              </div>
-            </td>
-            <td colSpan={3} />
-            <td colSpan={30} className={styles.itemWrapper}>
-              <div>
-                <section>
-                  <header>
-                    <h3>Entah</h3>
-                  </header>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Voluptatibus necessitatibus sit quisquam, cupiditate in
-                    exercitationem.
-                  </p>
-                </section>
-              </div>
-            </td>
+            <TimelineContent arrowPosition="bottom" data={educationItems} />
           </tr>
           <tr className={styles.line}>
-            <Lines />
+            <Lines data={months} />
           </tr>
           <tr className={styles.education}>
-            <td colSpan={42} className={styles.itemWrapper}>
-              <div>
-                <section>
-                  <header>
-                    <h3>Part-time</h3>
-                    <time>January 2012 - June 2015</time>
-                  </header>
-                  <p>Life as a blogger</p>
-                </section>
-              </div>
-            </td>
-            <td colSpan={8} />
-            <td colSpan={12 * 6 + 6} className={styles.itemWrapper}>
-              <div>
-                <section>
-                  <header>
-                    <h3>SMK Bina Taruna Jalancagak</h3>
-                    <time>January 2017 - August 2022</time>
-                  </header>
-                  <p>Teknik Komputer dan Jaringan(TKJ)</p>
-                </section>
-              </div>
-            </td>
-            <td colSpan={999} className={styles.itemWrapper}>
-              <div>
-                <section>
-                  <header>
-                    <h3>Freelancer</h3>
-                    <time>August 2022 - Present</time>
-                  </header>
-                  <p>Full-stack developer</p>
-                </section>
-              </div>
-            </td>
+            <TimelineContent
+              backgroundText="career"
+              arrowPosition="top"
+              data={careerTimeline}
+            />
           </tr>
         </tbody>
       </table>

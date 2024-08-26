@@ -5,6 +5,7 @@ import Hero from "@/components/sections/Hero";
 import LoadingScreen from "@/components/layouts/LoadingScreen";
 import { ThemeSwitcher } from "@/components/buttons/ThemeSwitcher";
 import { Project } from "@/components/sections/Project";
+import PageFooter from "@/components/ui/layout/PageFooter";
 
 const RootPage = () => {
   return (
@@ -15,12 +16,12 @@ const RootPage = () => {
           <TrackScroll />
           <Project />
 
-          <div className="bg-red-500 h-screen">heheh</div>
+          <PageFooter />
         </main>
       </div>
-      <div className="fixed top-0 left-0 z-20">
+      {/* <div className="fixed top-0 left-0 z-20">
         <ThemeSwitcher />
-      </div>
+      </div> */}
       <LoadingScreen />
     </ReactLenis>
   );

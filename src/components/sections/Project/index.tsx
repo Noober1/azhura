@@ -8,7 +8,7 @@ import photo1 from "@/images/photo1.jpg";
 import photo2 from "@/images/photo2.jpg";
 import photo3 from "@/images/photo3.jpg";
 import photo4 from "@/images/photo4.jpg";
-import { IconName } from "@/lib/constants";
+import { TechIconsLight, TechIconsDark } from "@/lib/constants";
 
 const horizontalScrollItem: HorizontalScrollItem[] = [
   {
@@ -19,12 +19,12 @@ const horizontalScrollItem: HorizontalScrollItem[] = [
     website: "https://psb.binataruna.sch.id",
     repoLink: "https://github.com/Noober1/new-psb",
     techStack: [
-      { name: "Next.js", iconName: IconName.NextJS },
-      { name: "React", iconName: IconName.ReactJS },
-      { name: "Typescript", iconName: IconName.Typescript },
-      { name: "Material UI", iconName: IconName.MaterialUI },
-      { name: "React Query", iconName: IconName.ReactQuery },
-      { name: "Redux", iconName: IconName.Redux },
+      { name: "Next.js", iconName: TechIconsDark.NextJS },
+      { name: "React", iconName: TechIconsDark.ReactJS },
+      { name: "Typescript", iconName: TechIconsDark.Typescript },
+      { name: "Material UI", iconName: TechIconsDark.MaterialUI },
+      { name: "React Query", iconName: TechIconsDark.ReactQuery },
+      { name: "Redux", iconName: TechIconsDark.Redux },
     ],
   },
   {
@@ -35,14 +35,14 @@ const horizontalScrollItem: HorizontalScrollItem[] = [
       "Online management system for the New Student Admissions SMK Bina Taruna Jalancagak",
     image: photo2,
     techStack: [
-      { name: "Next.js", iconName: IconName.NextJS },
-      { name: "React", iconName: IconName.ReactJS },
-      { name: "Prisma.js", iconName: IconName.PrismaJS },
-      { name: "Typescript", iconName: IconName.Typescript },
-      { name: "Material UI", iconName: IconName.MaterialUI },
-      { name: "Redux", iconName: IconName.Redux },
-      { name: "React Query", iconName: IconName.ReactQuery },
-      { name: "Tailwind CSS", iconName: IconName.TailwindCSS },
+      { name: "Next.js", iconName: TechIconsDark.NextJS },
+      { name: "React", iconName: TechIconsDark.ReactJS },
+      { name: "Prisma.js", iconName: TechIconsDark.PrismaJS },
+      { name: "Typescript", iconName: TechIconsDark.Typescript },
+      { name: "Material UI", iconName: TechIconsDark.MaterialUI },
+      { name: "Redux", iconName: TechIconsDark.Redux },
+      { name: "React Query", iconName: TechIconsDark.ReactQuery },
+      { name: "Tailwind CSS", iconName: TechIconsDark.TailwindCSS },
     ],
   },
   {
@@ -52,8 +52,8 @@ const horizontalScrollItem: HorizontalScrollItem[] = [
     website: "https://smk.binataruna.sch.id",
     repoLink: "https://github.com/Noober1/bintar-homepage",
     techStack: [
-      { name: "React", iconName: IconName.ReactJS },
-      { name: "Material UI", iconName: IconName.MaterialUI },
+      { name: "React", iconName: TechIconsDark.ReactJS },
+      { name: "Material UI", iconName: TechIconsDark.MaterialUI },
     ],
   },
   {
@@ -63,10 +63,10 @@ const horizontalScrollItem: HorizontalScrollItem[] = [
       "CBT is a software application designed for computer-based test. The integration of web socket technology enables real-time, interactive testing experiences.",
     image: photo4,
     techStack: [
-      { name: "Node.js", iconName: IconName.NodeJS },
-      { name: "Express.js", iconName: IconName.ExpressJS },
-      { name: "MongoDB", iconName: IconName.MongoDB },
-      { name: "Bootstrap", iconName: IconName.Bootstrap },
+      { name: "Node.js", iconName: TechIconsDark.NodeJS },
+      { name: "Express.js", iconName: TechIconsDark.ExpressJS },
+      { name: "MongoDB", iconName: TechIconsDark.MongoDB },
+      { name: "Bootstrap", iconName: TechIconsDark.Bootstrap },
     ],
   },
 ];

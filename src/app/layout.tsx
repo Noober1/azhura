@@ -2,10 +2,12 @@ import "@/app/globals.css";
 import ThemeProvider from "@/app/ThemeProvider";
 import { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import Icon from "@/vector/favicon.svg";
 
 export const metadata: Metadata = {
   title: "Azhura",
   description: "YNTKTS",
+  icons: Icon,
 };
 
 export function generateViewport(): Viewport {

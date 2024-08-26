@@ -1,0 +1,28 @@
+.parallax {
+  @apply overflow-hidden tracking-widest italic m-0 mb-1 whitespace-nowrap flex flex-nowrap w-full;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  line-height: 0.8;
+
+  .scroller {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 64px;
+    display: flex;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  span {
+    @apply flex transition-colors duration-250;
+    margin-right: 10px;
+
+    div {
+      @apply pr-3;
+    }
+
+    :hover {
+      @apply text-foreground-500 transition-colors duration-250;
+    }
+  }
+}
