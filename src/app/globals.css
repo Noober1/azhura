@@ -2,24 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "Impact";
-  src: local("Impact Regular"), local("Impact-Regular"),
-    url("../fonts/ImpactLTStd.woff2") format("woff2"),
-    url("../fonts/ImpactLTStd.woff") format("woff"),
-    url("../fonts/ImpactLTStd.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Inpin";
-  src: local("Inpin Regular"), local("Inpin-Regular"),
-    url("../fonts/Inpin.ttf") format("truetype");
-  font-weight: 200;
-  font-style: normal;
-}
-
 .prose :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
   @apply p-0 m-2;
 }

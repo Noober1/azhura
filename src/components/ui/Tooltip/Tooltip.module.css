@@ -2,8 +2,7 @@
   @apply p-2 text-center overflow-hidden;
 
   > .title {
-    @apply text-lg font-bold uppercase;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    @apply text-lg font-bold uppercase font-impact;
     letter-spacing: 1px;
   }
 

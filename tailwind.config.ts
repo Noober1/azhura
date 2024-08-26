@@ -10,6 +10,14 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: "class",
+  theme: {
+    extend: {
+      fontFamily: {
+        impact: ["var(--font-impact)"],
+        inpin: ["var(--font-inpin)"],
+      },
+    },
+  },
   plugins: [
     nextui({
       prefix: "ui",

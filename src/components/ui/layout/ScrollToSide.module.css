@@ -11,8 +11,7 @@
 }
 
 .title .bounce {
-  @apply text-5xl lg:text-7xl tracking-wider uppercase italic mb-4;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  @apply text-5xl lg:text-7xl tracking-wider uppercase italic mb-4 font-impact;
 }
 
 .title p {

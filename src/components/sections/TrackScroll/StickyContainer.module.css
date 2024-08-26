@@ -1,6 +1,5 @@
 .stickyContainer {
-  @apply sticky w-full left-0 bottom-0 py-2 text-center;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  @apply sticky w-full left-0 bottom-0 py-2 text-center font-impact;
   white-space: pre-wrap;
 
   > .text {
