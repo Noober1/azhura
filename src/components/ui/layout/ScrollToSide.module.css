@@ -15,8 +15,7 @@
 }
 
 .title p {
-  @apply text-xl;
-  font-family: Inpin, "Arial Narrow Bold", sans-serif;
+  @apply text-xl font-inpin;
 }
 
 .scrollWrapper {

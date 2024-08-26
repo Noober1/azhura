@@ -7,7 +7,7 @@
   }
 
   > .body {
-    font-family: Inpin, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    @apply font-inpin;
   }
 
   > .overlay {

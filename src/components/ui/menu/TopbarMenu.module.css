@@ -3,8 +3,7 @@
 }
 
 .menu li {
-  @apply mx-4 relative text-lg capitalize;
-  font-family: Inpin, "Arial Narrow Bold", sans-serif;
+  @apply mx-4 relative text-lg capitalize font-inpin;
 }
 
 .menu li::after {

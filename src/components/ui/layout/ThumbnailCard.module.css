@@ -50,8 +50,7 @@
 }
 
 .content p {
-  @apply max-h-24 mb-2 w-full whitespace-break-spaces text-justify text-ellipsis overflow-hidden;
-  font-family: Inpin, "Arial Narrow Bold", sans-serif;
+  @apply max-h-24 mb-2 w-full whitespace-break-spaces text-justify text-ellipsis overflow-hidden font-inpin;
 }
 
 .content p::first-letter {
@@ -75,8 +74,7 @@
 }
 
 .thumbnailLink > span > a {
-  @apply flex flex-row items-center bg-background/50 rounded-l-lg;
-  font-family: Inpin, "Arial Narrow Bold", sans-serif;
+  @apply flex flex-row items-center bg-background/50 rounded-l-lg font-inpin;
 }
 
 .linkButton {
