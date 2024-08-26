@@ -8,7 +8,8 @@ import photo1 from "@/images/photo1.jpg";
 import photo2 from "@/images/photo2.jpg";
 import photo3 from "@/images/photo3.jpg";
 import photo4 from "@/images/photo4.jpg";
-import { TechIconsLight, TechIconsDark } from "@/lib/constants";
+import photo5 from "@/images/photo5.jpg";
+import { TechIconsDark } from "@/lib/constants";
 
 const horizontalScrollItem: HorizontalScrollItem[] = [
   {
@@ -58,7 +59,6 @@ const horizontalScrollItem: HorizontalScrollItem[] = [
   },
   {
     title: "CeBeTeeS",
-
     description:
       "CBT is a software application designed for computer-based test. The integration of web socket technology enables real-time, interactive testing experiences.",
     image: photo4,
@@ -67,6 +67,21 @@ const horizontalScrollItem: HorizontalScrollItem[] = [
       { name: "Express.js", iconName: TechIconsDark.ExpressJS },
       { name: "MongoDB", iconName: TechIconsDark.MongoDB },
       { name: "Bootstrap", iconName: TechIconsDark.Bootstrap },
+    ],
+  },
+  {
+    title: "Azhura",
+    description: "My personal website (2024 version)",
+    image: photo5,
+    techStack: [
+      { name: "Node.js", iconName: TechIconsDark.NodeJS },
+      { name: "MySql", iconName: TechIconsDark.MySql },
+      { name: "React.JS", iconName: TechIconsDark.ReactJS },
+      { name: "Next.JS", iconName: TechIconsDark.NextJS },
+      { name: "Prisma ORM", iconName: TechIconsDark.PrismaJS },
+      { name: "Tailwind CSS", iconName: TechIconsDark.TailwindCSS },
+      { name: "PostCSS", iconName: TechIconsDark.PostCSS },
+      { name: "Framer Motion", iconName: TechIconsDark.FramerMotion },
     ],
   },
 ];

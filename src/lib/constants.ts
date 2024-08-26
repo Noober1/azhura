@@ -36,6 +36,7 @@ export enum TechIconsDark {
   NextJS = "nextjs_icon_dark.svg",
   ChakraUI = "chakra-ui.svg",
   FramerMotion = "framer_dark.svg",
+  PostCSS = "postcss.svg",
 }
 
 export const stripPattern = (color: string) =>
