@@ -3,15 +3,36 @@
 import TextSideScroll from "@/components/ui/text/TextSideScroll";
 import styles from "@/components/sections/Hero/Hero.module.css";
 import heroCover from "@/images/hero.jpg";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import {
+  motion,
+  useAnimation,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+  Variants,
+} from "framer-motion";
+import { useRef, useState } from "react";
 import SocialMediaIcons from "./SocialMediaIcons";
-import TextSplitBouncing from "@/components/ui/text/TextSplitBouncing";
-import TopbarMenu from "@/components/ui/menu/TopbarMenu";
 import TitleText from "@/components/ui/text/TitleText";
+import { twMerge } from "tailwind-merge";
+
+const helloVariants: Variants = {
+  initial: {
+    translateY: 30,
+  },
+  animate: {
+    translateY: 0,
+    transition: {
+      type: "spring",
+      duration: 0.25,
+    },
+  },
+};
 
 const HeroSection = () => {
   const targetRef = useRef(null);
+  const helloTextControl = useAnimation();
+  const [showSocialMedia, setshowSocialMedia] = useState<boolean>(false);
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -20,12 +41,17 @@ const HeroSection = () => {
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.6]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 15]);
   const opacity = useTransform(scrollYProgress, [0, 0.6, 1], [0.75, 0.75, 0]);
-  const socialMediaOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.75, 1],
-    [0, 0, 1]
-  );
   const backgroundOpacity = useTransform(scrollYProgress, [0, 1], [0.6, 0.1]);
+
+  useMotionValueEvent(scrollYProgress, "change", (value) => {
+    if (value > 0.75) {
+      helloTextControl.start("animate");
+    } else {
+      helloTextControl.start("initial");
+    }
+
+    setshowSocialMedia(value > 0.75);
+  });
 
   return (
     <div className={styles.hero} ref={targetRef}>
@@ -44,10 +70,43 @@ const HeroSection = () => {
         <div className={styles.brandWrapper}>
           {/* <TopbarMenu /> */}
           <motion.div className={styles.brand}>
+            <motion.div className={twMerge(styles.helloText, "lg:ml-10")}>
+              <motion.span
+                animate={helloTextControl}
+                variants={helloVariants}
+                transition={{
+                  type: "spring",
+                  duration: 0.5,
+                }}
+                initial="initial"
+              >
+                <span className="text-danger">Hello</span>, i am
+              </motion.span>
+            </motion.div>
             <TitleText progress={scrollYProgress} />
+            <motion.div className={styles.helloText}>
+              <motion.span
+                className="lg:mr-10 text-right lg:!text-xl"
+                animate={helloTextControl}
+                variants={helloVariants}
+                transition={{
+                  type: "spring",
+                  duration: 0.5,
+                }}
+                initial="initial"
+              >
+                A <span className="text-primary">full-stack</span> developer
+              </motion.span>
+            </motion.div>
           </motion.div>
-          <motion.div style={{ opacity: socialMediaOpacity }}>
-            <SocialMediaIcons withoutTooltip />
+          <motion.div
+            style={{
+              opacity: showSocialMedia ? 1 : 0,
+              pointerEvents: showSocialMedia ? "all" : "none",
+            }}
+            className="transition-all duration-250"
+          >
+            <SocialMediaIcons />
           </motion.div>
         </div>
       </div>

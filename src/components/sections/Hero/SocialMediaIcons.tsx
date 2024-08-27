@@ -2,7 +2,13 @@ import { Tooltip } from "@/components/ui/Tooltip";
 import { Button, Link } from "@nextui-org/react";
 import { motion, Variants } from "framer-motion";
 import React from "react";
-import { FaFacebook, FaTwitter, FaGithub, FaSteam } from "react-icons/fa6";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaGithub,
+  FaSteam,
+  FaLinkedin,
+} from "react-icons/fa6";
 import { IconType } from "react-icons/lib";
 import { MdEmail } from "react-icons/md";
 
@@ -59,10 +65,10 @@ const socialMedia: Icons[] = [
     desc: "You have something to discuss? Reach me by email",
   },
   {
-    label: "Steam",
-    icon: FaSteam,
-    link: "https://steamcommunity.com/id/lordazhura/",
-    desc: "Not a pro, but let's play together",
+    label: "LinkedIn",
+    icon: FaLinkedin,
+    link: "https://www.linkedin.com/in/cucu-ruhiyatna/",
+    desc: "View my LinkedIn profile",
   },
 ];
 

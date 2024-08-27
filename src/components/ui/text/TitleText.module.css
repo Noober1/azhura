@@ -1,5 +1,5 @@
 .titleText {
-  @apply w-screen max-w-sm px-4 sm:max-w-md md:max-w-lg lg:max-w-2xl mb-4;
+  @apply w-screen max-w-sm px-4 sm:max-w-md md:max-w-lg lg:max-w-2xl;
 }
 
 .titleText svg {

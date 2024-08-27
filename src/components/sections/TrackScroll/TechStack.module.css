@@ -1,14 +1,14 @@
 .main {
   @apply overflow-hidden w-full mb-28 flex flex-col items-center;
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 1) 10%,
-    rgba(0, 0, 0, 1) 90%,
-    transparent
-  );
-}
 
-.main p {
-  @apply text-center mb-6 text-3xl;
+  > .icon {
+    @apply w-full;
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 90%,
+      transparent
+    );
+  }
 }

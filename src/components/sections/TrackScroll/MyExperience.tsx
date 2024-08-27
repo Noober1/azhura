@@ -65,7 +65,7 @@ const MyExperience = () => {
           Here is a timeline of my works and educations
         </SubtitleText>
         <div className="relative w-full h-full">
-          <motion.div className="absolute inset-0 font-['Impact'] italic flex items-center justify-center opacity-25 text-[7rem]">
+          <motion.div className="absolute inset-0 font-impact italic flex items-center justify-center opacity-25 text-[5rem] sm:text-[6rem]">
             {textBackgroundPercent}%
           </motion.div>
           <Timeline ref={timelineRef} scroll={scroll} months={months} />

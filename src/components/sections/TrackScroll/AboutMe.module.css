@@ -1,5 +1,5 @@
 .textScrollBackground {
-  @apply absolute top-1/2 rotate-[70deg] -translate-y-1/4 -translate-x-1/4 left-0 w-full -z-10;
+  @apply absolute top-1/2 rotate-[70deg] -translate-y-1/4 scale-[2] sm:scale-150 md:scale-125 lg:scale-100 -translate-x-1/4 left-0 w-full max-h-[100px] -z-10;
 
   > .picture span {
     width: 400px;
@@ -10,9 +10,7 @@
   }
 
   span {
-    @apply opacity-75;
-    line-height: 0.7;
-    font-size: 200px;
+    @apply opacity-75 text-[4rem] md:text-[10rem] leading-[0.75];
   }
 }
 
@@ -30,7 +28,7 @@
     }
 
     > h3 {
-      @apply text-5xl lg:text-8xl mb-4 tracking-wide font-impact;
+      @apply text-5xl md:text-7xl lg:text-8xl mb-4 tracking-wide font-impact;
     }
   }
 }

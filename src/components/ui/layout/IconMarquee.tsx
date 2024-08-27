@@ -4,8 +4,9 @@ import styles from "./IconMarquee.module.css";
 import { motion, Variants } from "framer-motion";
 import React from "react";
 import Magnetic from "../Magnetic";
+import { useBreakpoint } from "@/hooks/useTailwindBreakpoints";
 
-const ITEM_WIDTH = 7;
+const ITEM_WIDTH = [7, 6];
 
 interface Items {
   name: string;
@@ -15,6 +16,7 @@ interface Items {
 export type IconMarqueeItems = Items[];
 
 const IconMarquee = ({ items }: { items: Items[] }) => {
+  const isDesktop = useBreakpoint("md");
   const Items = () => {
     return (
       <>
@@ -23,14 +25,14 @@ const IconMarquee = ({ items }: { items: Items[] }) => {
             <motion.div
               className={styles.itemWrapper}
               style={{
-                width: ITEM_WIDTH + "rem",
+                width: `${isDesktop ? ITEM_WIDTH[0] : ITEM_WIDTH[1]}rem`,
               }}
               key={index}
             >
               <motion.img
                 draggable={false}
-                width={`${ITEM_WIDTH}rem`}
-                height={`${ITEM_WIDTH}rem`}
+                width={`${isDesktop ? ITEM_WIDTH[0] : ITEM_WIDTH[1]}rem`}
+                height={`${isDesktop ? ITEM_WIDTH[0] : ITEM_WIDTH[1]}rem`}
                 src={`https://svgl.app/library/${item.icon}`}
                 alt={item.name}
               />
@@ -47,7 +49,8 @@ const IconMarquee = ({ items }: { items: Items[] }) => {
       translateX: "0%",
     },
     animate: {
-      translateX: -1 * items.length * ITEM_WIDTH + "rem",
+      translateX:
+        -1 * items.length * (isDesktop ? ITEM_WIDTH[0] : ITEM_WIDTH[1]) + "rem",
       transition: {
         bounce: false,
         ease: "linear",

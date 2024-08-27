@@ -25,7 +25,9 @@ const TechStack = () => {
       <SubtitleText as="h3" className="mb-5">
         The tech stack I typically use in development
       </SubtitleText>
-      <IconMarquee items={items} />
+      <div className={styled.icon}>
+        <IconMarquee items={items} />
+      </div>
     </div>
   );
 };

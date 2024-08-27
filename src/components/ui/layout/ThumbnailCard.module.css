@@ -45,7 +45,7 @@
 }
 
 .content header h2 {
-  @apply text-4xl tracking-wide uppercase mb-2 relative font-impact;
+  @apply text-3xl sm:text-4xl tracking-wide uppercase relative font-impact;
   text-shadow: 0rem 0.1rem 0.1rem hsl(var(--ui-background));
 }
 

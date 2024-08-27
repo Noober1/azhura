@@ -1,6 +1,6 @@
 .parallax {
-  @apply overflow-hidden tracking-widest italic m-0 mb-1 whitespace-nowrap flex flex-nowrap w-full font-impact;
-  line-height: 0.8;
+  @apply overflow-hidden pt-2.5 tracking-widest italic m-0 mb-1 whitespace-nowrap flex flex-nowrap w-full font-impact;
+  line-height: 0.7;
 
   .scroller {
     font-weight: 600;

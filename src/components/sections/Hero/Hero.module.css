@@ -21,7 +21,13 @@
 }
 
 .brand {
-  /* @apply  */
+  @apply lg:mb-4;
+  .helloText {
+    @apply px-4 w-full font-inpin overflow-hidden;
+    > span {
+      @apply block lg:text-2xl;
+    }
+  }
 }
 
 .backgroundWrapper {
