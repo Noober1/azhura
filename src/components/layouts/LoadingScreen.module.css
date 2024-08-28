@@ -2,6 +2,6 @@
   @apply fixed z-50 items-center justify-center flex inset-0 bg-black font-impact;
 
   > span {
-    @apply text-lg md:text-2xl lg:text-6xl -skew-x-6 uppercase tracking-wider;
+    @apply text-4xl md:text-6xl -skew-x-6 uppercase tracking-wider;
   }
 }

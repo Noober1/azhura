@@ -3,9 +3,11 @@ import { ReactLenis } from "@/lib/lenis-scroll";
 import TrackScroll from "@/components/sections/TrackScroll";
 import Hero from "@/components/sections/Hero";
 import LoadingScreen from "@/components/layouts/LoadingScreen";
-import { ThemeSwitcher } from "@/components/buttons/ThemeSwitcher";
 import { Project } from "@/components/sections/Project";
 import PageFooter from "@/components/ui/layout/PageFooter";
+import { ViewportStatistic } from "@/components/tools/devtools";
+import ContactSection from "@/components/ui/layout/Contact";
+import { ThemeSwitcher } from "@/components/buttons/ThemeSwitcher";
 
 const RootPage = () => {
   return (
@@ -15,13 +17,17 @@ const RootPage = () => {
           <Hero />
           <TrackScroll />
           <Project />
-
+          <ContactSection />
           <PageFooter />
         </main>
       </div>
-      {/* <div className="fixed top-0 left-0 z-20">
-        <ThemeSwitcher />
-      </div> */}
+      {process.env.NODE_ENV === "development" && (
+        <div className="fixed top-0 left-0 right-0">
+          <ViewportStatistic />
+          <ThemeSwitcher />
+        </div>
+      )}
+
       <LoadingScreen />
     </ReactLenis>
   );

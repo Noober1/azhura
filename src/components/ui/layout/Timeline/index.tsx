@@ -134,7 +134,7 @@ const educationItems: TimelineContent[] = [
     content: {
       title: "STMIK Subang",
       date: "September 2017 - 2021",
-      description: "Sistem Informasi (SI)",
+      description: "Information System (SI)",
     },
   },
 ];

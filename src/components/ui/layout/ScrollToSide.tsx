@@ -9,6 +9,7 @@ import { StaticImageData } from "next/image";
 import ThumbnailCard from "@/components/ui/layout/ThumbnailCard";
 import TextSplitBouncing from "../text/TextSplitBouncing";
 import { Image } from "@nextui-org/react";
+import { useBreakpoint } from "@/hooks/useTailwindBreakpoints";
 
 export interface HorizontalScrollItem {
   title: string;
@@ -42,6 +43,7 @@ const ScrollToSide = ({
     items[0]
   );
   const { width } = useWindowDimension();
+  const isDesktop = useBreakpoint("md");
   const parentRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: parentRef,
@@ -65,7 +67,7 @@ const ScrollToSide = ({
       ref={parentRef}
       className={styles.scrollToSide}
       style={{
-        height: PARENT_HEIGHT,
+        height: isDesktop ? PARENT_HEIGHT : undefined,
       }}
     >
       <div className={styles.contentWrapper}>
@@ -87,15 +89,19 @@ const ScrollToSide = ({
         <div className={styles.scrollWrapper}>
           <motion.div
             className={styles.itemWrapper}
-            style={{
-              translateX: scrollItem,
-            }}
+            style={
+              isDesktop
+                ? {
+                    translateX: scrollItem,
+                  }
+                : undefined
+            }
           >
             {items.map((item, index) => (
               <motion.div
                 onMouseEnter={() => handleHoverThumbnail(item)}
                 key={index}
-                style={{ width: ITEM_WIDTH }}
+                style={{ width: isDesktop ? ITEM_WIDTH : undefined }}
                 className={twMerge(styles.item)}
               >
                 <ThumbnailCard key={index} {...item} />

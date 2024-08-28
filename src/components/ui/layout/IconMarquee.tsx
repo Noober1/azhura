@@ -2,7 +2,7 @@
 
 import styles from "./IconMarquee.module.css";
 import { motion, Variants } from "framer-motion";
-import React from "react";
+import React, { useRef } from "react";
 import Magnetic from "../Magnetic";
 
 const ITEM_WIDTH = 7;
@@ -15,6 +15,7 @@ interface Items {
 export type IconMarqueeItems = Items[];
 
 const IconMarquee = ({ items }: { items: Items[] }) => {
+  const scrollRef = useRef(-1 * items.length * ITEM_WIDTH + "rem");
   const Items = () => {
     return (
       <>
@@ -23,7 +24,7 @@ const IconMarquee = ({ items }: { items: Items[] }) => {
             <motion.div
               className={styles.itemWrapper}
               style={{
-                width: ITEM_WIDTH + "rem",
+                width: `${ITEM_WIDTH}rem`,
               }}
               key={index}
             >
@@ -47,7 +48,7 @@ const IconMarquee = ({ items }: { items: Items[] }) => {
       translateX: "0%",
     },
     animate: {
-      translateX: -1 * items.length * ITEM_WIDTH + "rem",
+      translateX: scrollRef.current,
       transition: {
         bounce: false,
         ease: "linear",

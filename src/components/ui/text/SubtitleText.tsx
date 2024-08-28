@@ -16,7 +16,7 @@ const variants: Variants = {
   reveal: {
     width: 0,
     transition: {
-      duration: 0.5,
+      duration: 0.25,
       easings: true,
       ease: "linear",
     },
@@ -30,7 +30,7 @@ const textVariants: Variants = {
   reveal: {
     translateY: 0,
     transition: {
-      delay: 0.5,
+      delay: 0.25,
       duration: 0.25,
     },
   },
@@ -52,7 +52,7 @@ const SubtitleText = ({
   const Text = createElement(
     as,
     {
-      className: "text-center mb-0 text-3xl font-inpin",
+      className: "text-center mb-0 text-xl md:text-3xl font-inpin",
       ...props,
     },
     TextRender()
@@ -66,7 +66,7 @@ const SubtitleText = ({
         margin: "0% 0% -25% 0%",
         once: true,
       }}
-      className={twMerge(styles.main, className)}
+      className={twMerge(className, styles.main)}
       {...props}
     >
       <motion.div variants={textVariants}>{Text}</motion.div>

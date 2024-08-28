@@ -1,7 +1,7 @@
 .main {
-  @apply relative w-fit text-center overflow-hidden;
+  @apply relative w-fit text-center overflow-hidden mx-2;
 
   > span {
-    @apply absolute top-0 right-0 w-full h-full bg-primary;
+    @apply absolute top-0 right-0 w-full h-full bg-primary text-xl;
   }
 }

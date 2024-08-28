@@ -11,7 +11,7 @@ interface TitleTextProps {
 const TitleText = ({ progress }: TitleTextProps) => {
   const pathLength = useTransform(progress, [0, 0.05, 0.85, 1], [0, 0, 0.1, 1]);
   const strokeWidth = useTransform(progress, [0, 0.75, 1], [2, 2, 0]);
-  const pathFill = useTransform(progress, [0, 0.75, 1], [0, 0, 1]);
+  const pathFill = useTransform(progress, [0, 0.75, 0.9, 1], [0, 0, 1, 1]);
   return (
     <div className={styles.titleText}>
       <svg

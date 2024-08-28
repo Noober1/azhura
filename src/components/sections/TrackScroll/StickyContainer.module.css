@@ -1,15 +1,22 @@
 .stickyContainer {
-  @apply sticky w-full left-0 bottom-0 py-2 text-center font-impact;
+  @apply sticky transition-all duration-250 w-full left-0 bottom-0 py-2 text-center font-impact p-2 overflow-hidden;
   white-space: pre-wrap;
 
   > .text {
-    @apply uppercase italic text-7xl tracking-wider;
+    @apply overflow-hidden;
     text-shadow: 2px 2px 0px hsl(var(--ui-background) / 0.5);
+
+    span {
+      @apply uppercase italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl tracking-wider;
+    }
   }
 
   > .background {
-    @apply w-0 absolute h-0 overflow-hidden;
+    @apply absolute overflow-hidden top-0 left-0 w-full;
 
+    > .backgroundText > div {
+      @apply !pt-0;
+    }
     > .backgroundText span {
       @apply opacity-50 mr-6 !text-transparent;
       background-image: url("/strip-pattern.png");
