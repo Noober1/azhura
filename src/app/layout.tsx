@@ -8,6 +8,7 @@ import OGImage from "@/images/og-image.jpg";
 import TWImage from "@/images/tw-image.jpg";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.BASE_URL),
   title: "Cucu Ruhiyatna",
   description:
     "Hello, my name is Cucu Ruhiyatna, a full-stack developer. Welcome to my personal website.",
