@@ -8,6 +8,13 @@ import PageFooter from "@/components/ui/layout/PageFooter";
 import { ViewportStatistic } from "@/components/tools/devtools";
 import ContactSection from "@/components/ui/layout/Contact";
 import { ThemeSwitcher } from "@/components/buttons/ThemeSwitcher";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Cucu Ruhiyatna | Personal homepage",
+  description:
+    "Hello, my name is Cucu Ruhiyatna, a full-stack developer. Welcome to my personal website.",
+};
 
 const RootPage = () => {
   return (
