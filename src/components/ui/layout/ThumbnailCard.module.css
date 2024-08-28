@@ -36,17 +36,21 @@
 }
 
 .thumbnailCard:hover .content header h2 {
-  @apply text-foreground;
   text-shadow: none;
 }
 
 .content {
   @apply absolute top-0 left-0 w-full h-full flex flex-col justify-end px-2 lg:px-4 pointer-events-none;
+
+  header h2,
+  p {
+    @apply text-secondary-foreground;
+  }
 }
 
 .content header h2 {
   @apply text-3xl sm:text-4xl tracking-wide uppercase relative font-impact;
-  text-shadow: 0rem 0.1rem 0.1rem hsl(var(--ui-background));
+  text-shadow: 0rem 0.1rem 0.1rem hsl(var(--ui-foreground));
 }
 
 .content p {

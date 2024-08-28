@@ -1,23 +1,8 @@
 import { Tooltip } from "@/components/ui/Tooltip";
+import { socialMedia } from "@/lib/constants";
 import { Button, Link } from "@nextui-org/react";
 import { motion, Variants } from "framer-motion";
 import React from "react";
-import {
-  FaFacebook,
-  FaTwitter,
-  FaGithub,
-  FaSteam,
-  FaLinkedin,
-} from "react-icons/fa6";
-import { IconType } from "react-icons/lib";
-import { MdEmail } from "react-icons/md";
-
-interface Icons {
-  label: string;
-  desc: string;
-  icon: IconType;
-  link: string;
-}
 
 const variants: Variants = {
   initial: {
@@ -38,39 +23,6 @@ const variants: Variants = {
     },
   },
 };
-
-const socialMedia: Icons[] = [
-  {
-    label: "Facebook",
-    icon: FaFacebook,
-    link: "https://fb.me/ruhiyatna.cucu",
-    desc: "Add me on Facebook",
-  },
-  {
-    label: "Twitter",
-    icon: FaTwitter,
-    link: "https://x.com/cybersnatural",
-    desc: "Follow me on Twitter",
-  },
-  {
-    label: "GitHub",
-    icon: FaGithub,
-    link: "https://github.com/Noober1/",
-    desc: "You can see my projects on my GitHub profile",
-  },
-  {
-    label: "Email",
-    icon: MdEmail,
-    link: "mailto:cucu@ruhiyatna.id",
-    desc: "You have something to discuss? Reach me by email",
-  },
-  {
-    label: "LinkedIn",
-    icon: FaLinkedin,
-    link: "https://www.linkedin.com/in/cucu-ruhiyatna/",
-    desc: "View my LinkedIn profile",
-  },
-];
 
 interface SocialMediaIconsProps {
   tooltipPlacement?: "top" | "bottom";

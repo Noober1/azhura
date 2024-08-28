@@ -10,7 +10,7 @@ const ViewportStatistic = () => {
   const IsXL = useBreakpointValue("xl", "YES", "NO");
 
   return (
-    <ul className="fixed top-0 left-0 w-fit [&>li]:inline [&>li]:mx-2">
+    <ul className="w-fit [&>li]:inline [&>li]:mx-2">
       <li>SM:{IsSmall}</li>
       <li>MD:{IsMedium}</li>
       <li>LG:{IsLarge}</li>
@@ -19,4 +19,4 @@ const ViewportStatistic = () => {
   );
 };
 
-export default ViewportStatistic;
+export { ViewportStatistic };

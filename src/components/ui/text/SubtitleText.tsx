@@ -66,7 +66,7 @@ const SubtitleText = ({
         margin: "0% 0% -25% 0%",
         once: true,
       }}
-      className={twMerge(styles.main, className)}
+      className={twMerge(className, styles.main)}
       {...props}
     >
       <motion.div variants={textVariants}>{Text}</motion.div>
