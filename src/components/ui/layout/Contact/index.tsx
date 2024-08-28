@@ -4,6 +4,21 @@ import SubtitleText from "../../text/SubtitleText";
 import TextSplitBouncing from "../../text/TextSplitBouncing";
 import styles from "./Contact.module.css";
 import ContactItem from "./ContactItem";
+import { motion, Variants } from "framer-motion";
+
+const variants: Variants = {
+  initial: {
+    translateX: -30,
+    opacity: 0,
+  },
+  animate: (index) => ({
+    translateX: 0,
+    opacity: 1,
+    transition: {
+      delay: index * 0.1,
+    },
+  }),
+};
 
 const ContactSection = () => {
   return (
@@ -20,9 +35,19 @@ const ContactSection = () => {
       </header>
       <div className={styles.contactWrapper}>
         {contactList.map((item, i) => (
-          <div className={styles.contactItem} key={i}>
+          <motion.div
+            whileInView="animate"
+            initial="initial"
+            variants={variants}
+            custom={i}
+            className={styles.contactItem}
+            key={i}
+            viewport={{
+              once: true,
+            }}
+          >
             <ContactItem {...item} />
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

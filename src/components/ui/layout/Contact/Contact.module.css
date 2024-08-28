@@ -32,23 +32,39 @@
     0 0
   );
 
-  &:hover & .contactItemWrapper::after {
-    @apply top-2 left-2;
+  &:hover & .contactItemWrapper::after,
+  &:focus-within & .contactItemWrapper::after {
+    @apply top-2 left-2 bg-primary;
+  }
+
+  &:hover & .contactItemWrapper,
+  &:focus-within & .contactItemWrapper {
+    @apply border-primary;
+  }
+
+  &:hover & .contactItemWrapper::before,
+  &:focus-within & .contactItemWrapper::before {
+    @apply bg-primary;
+  }
+
+  &:hover & .contactIcon,
+  &:focus-within & .contactIcon {
+    @apply text-primary;
   }
 
   > .contactItemWrapper {
-    @apply relative bg-background flex flex-row min-h-24 border-2 border-solid border-foreground;
+    @apply relative bg-background flex transition-colors duration-100 flex-row min-h-24 border-2 border-solid border-foreground;
 
     &::before {
-      @apply content-[""] bg-foreground w-[44px] h-[2px] absolute top-[13px] right-[-8px] rotate-45;
+      @apply content-[""] bg-foreground w-[44px] transition-colors duration-100 h-[2px] absolute top-[13px] right-[-8px] rotate-45;
     }
 
     &::after {
-      @apply content-[""] absolute transition-all ease-linear duration-250 top-1 left-1 bg-foreground w-full h-full -z-10;
+      @apply content-[""] absolute transition-all ease-linear duration-100 top-1 left-1 bg-foreground w-full h-full -z-10;
     }
 
     > .contactIcon {
-      @apply flex items-center justify-center px-4;
+      @apply flex items-center justify-center px-4 transition-colors duration-100;
     }
 
     > .contactInfo {

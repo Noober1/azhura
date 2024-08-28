@@ -1,6 +1,6 @@
 import styles from "./SubtitleText.module.css";
-import { easeInOut, motion, Variants } from "framer-motion";
-import { ReactHTML, ReactNode, createElement } from "react";
+import { motion, Variants } from "framer-motion";
+import { ReactHTML, createElement } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface SubtitleTextProps {

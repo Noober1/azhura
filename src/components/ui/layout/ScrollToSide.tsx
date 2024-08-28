@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "./ScrollToSide.module.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { twMerge } from "tailwind-merge";

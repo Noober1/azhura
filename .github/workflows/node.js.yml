@@ -22,4 +22,4 @@ jobs:
             git status
             npm install --only-prod
             npm run build
-            pm2 restart azhura
+            pm2 restart azhura --update-env

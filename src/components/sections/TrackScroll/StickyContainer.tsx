@@ -1,11 +1,6 @@
 import TextSideScroll from "@/components/ui/text/TextSideScroll";
 import TextSplitBouncing from "@/components/ui/text/TextSplitBouncing";
-import {
-  AnimationControls,
-  motion,
-  useAnimation,
-  Variants,
-} from "framer-motion";
+import { motion, useAnimation, Variants } from "framer-motion";
 import React, { useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import styles from "./StickyContainer.module.css";

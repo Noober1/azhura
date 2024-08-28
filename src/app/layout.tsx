@@ -4,10 +4,19 @@ import { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 import { twMerge } from "tailwind-merge";
+import OGImage from "@/images/og-image.jpg";
+import TWImage from "@/images/tw-image.jpg";
 
 export const metadata: Metadata = {
   title: "Cucu Ruhiyatna",
-  description: "Cucu Ruhiyatna personal website",
+  description:
+    "Hello, my name is Cucu Ruhiyatna, a full-stack developer. Welcome to my personal website.",
+  openGraph: {
+    images: [OGImage.src],
+  },
+  twitter: {
+    images: [TWImage.src],
+  },
 };
 
 export function generateViewport(): Viewport {

@@ -1,5 +1,4 @@
 import { useMDXComponents } from "@mdx-js/react";
-import { MDXRemoteProps, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
 import remarkGfm from "remark-gfm";

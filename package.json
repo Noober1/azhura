@@ -10,6 +10,9 @@
     "migration:create": "prisma migrate dev --create-only",
     "migrate": "prisma migrate deploy"
   },
+  "engines": {
+    "node": ">=18.18.0 <20.0.0"
+  },
   "dependencies": {
     "@kodingdotninja/use-tailwind-breakpoint": "^1.0.0",
     "@mapbox/rehype-prism": "^0.9.0",
@@ -50,6 +53,7 @@
     "@types/react-dom": "^18",
     "@types/react-syntax-highlighter": "^15.5.13",
     "@types/react-vertical-timeline-component": "^3.3.6",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",

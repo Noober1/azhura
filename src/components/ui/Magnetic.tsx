@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode, useEffect, useRef } from "react";
+import React, { ReactElement, useEffect, useRef } from "react";
 import gsap from "gsap";
 
 interface MagneticProps {
@@ -29,7 +29,7 @@ const Magnetic = ({ children }: MagneticProps) => {
         xTo(x * 0.35);
         yTo(y * 0.35);
       });
-      magnetic.current.addEventListener("mouseleave", (e) => {
+      magnetic.current.addEventListener("mouseleave", () => {
         xTo(0);
         yTo(0);
       });

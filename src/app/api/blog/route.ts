@@ -2,14 +2,14 @@ import prisma from "@/lib/prisma";
 
 export const dynamic = "force-dynamic";
 
-export const GET = async (request: Request) => {
+export const GET = async () => {
   const blog = await prisma.post.findFirst();
 
   return Response.json(blog);
 };
 
-export const POST = async (request: Request) => {
-  const create = await prisma.post.createMany({
+export const POST = async () => {
+  await prisma.post.createMany({
     data: [
       {
         authorId: 1,
