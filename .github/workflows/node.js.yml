@@ -18,6 +18,7 @@ jobs:
           port: 22
           script: |
             cd /home/azhura/azhura
+            git restore .
             git pull origin main
             git status
             npm install --only-prod
