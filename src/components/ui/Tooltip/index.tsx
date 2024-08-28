@@ -1,6 +1,6 @@
 import styles from "./Tooltip.module.css";
 import React, { ReactNode } from "react";
-import { Tooltip as NextTooltip, Button } from "@nextui-org/react";
+import { Tooltip as NextTooltip } from "@nextui-org/react";
 import type { TooltipProps as NextTooltipProps } from "@nextui-org/react";
 import { motion, Variants } from "framer-motion";
 import TextSplitBouncing from "@/components/ui/text/TextSplitBouncing";

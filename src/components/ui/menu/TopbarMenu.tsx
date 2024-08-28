@@ -1,7 +1,6 @@
 import React from "react";
 
 import styles from "./TopbarMenu.module.css";
-import { Button } from "@nextui-org/react";
 import Magnetic from "../Magnetic";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";

@@ -2,7 +2,7 @@ import prisma from "@/lib/prisma";
 
 export const dynamic = "force-dynamic"; // defaults to auto
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     const res = prisma.user.createMany({
       data: [
@@ -18,6 +18,7 @@ export async function GET(request: Request) {
       result: "ok",
       data: res,
     });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return Response.json({
       result: "error",

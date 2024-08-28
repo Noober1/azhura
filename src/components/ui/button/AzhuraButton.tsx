@@ -5,7 +5,7 @@ import { forwardRef, ReactNode, Ref } from "react";
 import { Ripple, Spinner } from "@nextui-org/react";
 import { ButtonProps, useButton } from "@nextui-org/button";
 import { twMerge } from "tailwind-merge";
-import { HTMLMotionProps, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Magnetic from "../Magnetic";
 
 interface AzhuraButtonProps extends ButtonProps {
@@ -35,10 +35,15 @@ const AzhuraButton = forwardRef(
     const { ripples, onClear } = getRippleProps();
 
     const {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       color,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onAnimationStart,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onDragStart,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onDragEnd,
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onDrag,
       ...newProps
     } = getButtonProps();

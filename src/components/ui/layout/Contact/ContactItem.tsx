@@ -1,8 +1,9 @@
 import { Contact } from "@/lib/constants";
 import styles from "./Contact.module.css";
 import React from "react";
-import { Card, CardBody, Link } from "@nextui-org/react";
+import { Link } from "@nextui-org/react";
 import NextLink from "next/link";
+import Magnetic from "../../Magnetic";
 
 interface ContactItemProps extends Contact {}
 
@@ -16,16 +17,20 @@ const ContactItem = (props: ContactItemProps) => {
     >
       <div className={styles.contactItem}>
         <div className={styles.contactItemWrapper}>
-          <div className={styles.contactIcon}>
-            {props.icon({ size: "3rem" })}
-          </div>
+          <Magnetic>
+            <div className={styles.contactIcon}>
+              {props.icon({ size: "3rem" })}
+            </div>
+          </Magnetic>
           <div className={styles.contactInfo}>
             <h3>{props.label}</h3>
             <p>{props.desc}</p>
           </div>
-          <div className="absolute opacity-25 -top-6 right-0">
-            {props.icon({ size: "6.5rem" })}
-          </div>
+          <Magnetic>
+            <div className="absolute opacity-25 -top-6 right-0">
+              {props.icon({ size: "6.5rem" })}
+            </div>
+          </Magnetic>
         </div>
       </div>
     </Link>

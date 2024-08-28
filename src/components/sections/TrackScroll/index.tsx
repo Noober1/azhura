@@ -36,7 +36,7 @@ const TrackScroll = () => {
     <section ref={ref} className={styles.trackScroll}>
       <motion.div
         className={twMerge(styles.section, styles.profile)}
-        onViewportEnter={(event) =>
+        onViewportEnter={() =>
           setSection({
             color: "primary",
             text: "About me",
