@@ -29,13 +29,14 @@ const helloVariants: Variants = {
   },
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const HeroSection = () => {
-  const targetRef = useRef(null);
+  const parentRef = useRef<HTMLDivElement>(null);
   const helloTextControl = useAnimation();
   const [showSocialMedia, setshowSocialMedia] = useState<boolean>(false);
 
   const { scrollYProgress } = useScroll({
-    target: targetRef,
+    target: parentRef,
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.6]);
@@ -54,7 +55,7 @@ const HeroSection = () => {
   });
 
   return (
-    <div className={styles.hero} ref={targetRef}>
+    <div className={styles.hero} ref={parentRef}>
       <div className={styles.wrapper}>
         <div className={styles.backgroundWrapper}>
           <motion.div
@@ -68,7 +69,6 @@ const HeroSection = () => {
           />
         </div>
         <div className={styles.brandWrapper}>
-          {/* <TopbarMenu /> */}
           <motion.div className={styles.brand}>
             <motion.div className={twMerge(styles.helloText, "lg:ml-10")}>
               <motion.span
