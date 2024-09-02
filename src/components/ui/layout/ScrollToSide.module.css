@@ -3,7 +3,16 @@
 }
 
 .contentWrapper {
-  @apply sticky top-0 md:h-screen md:max-h-[1000px] flex flex-col items-center overflow-hidden;
+  @apply sticky top-0 md:h-screen md:max-h-[1000px] flex flex-col items-center overflow-hidden bg-foreground-50;
+
+  &::after {
+    @apply content-[''] absolute bottom-0 w-full h-1/4 pointer-events-none;
+    background: linear-gradient(
+      0deg,
+      hsl(var(--ui-background)) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
 }
 
 .title {
@@ -39,8 +48,16 @@
   @apply px-2 md:px-0 block md:inline-table;
 }
 
-.backgroundImage {
-  @apply absolute top-0 -z-10 w-full h-full flex items-center;
+.backgroundText {
+  @apply absolute inset-0 -z-10 flex flex-col justify-center -rotate-12 scale-125;
+
+  > div {
+    @apply pb-4;
+  }
+
+  span {
+    @apply text-[3rem] lg:text-[16rem] text-foreground-200;
+  }
 }
 
 .backgroundImage::before {

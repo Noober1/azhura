@@ -42,9 +42,6 @@ const ContactSection = () => {
             custom={i}
             className={styles.contactItem}
             key={i}
-            viewport={{
-              once: true,
-            }}
           >
             <ContactItem {...item} />
           </motion.div>
