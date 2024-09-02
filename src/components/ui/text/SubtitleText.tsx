@@ -65,7 +65,6 @@ const SubtitleText = ({
       whileInView="reveal"
       viewport={{
         margin: "0% 0% -25% 0%",
-        once: true,
       }}
       className={twMerge(className, styles.main)}
       {...props}

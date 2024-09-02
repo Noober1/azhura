@@ -37,7 +37,10 @@ const MyExperience = () => {
     return Math.round(bgValue);
   }, [bgValue]);
 
-  const months = generateMonths(new Date("1 January 2012"), new Date());
+  const months = generateMonths(
+    new Date("1 January 2012"),
+    new Date("1 August 2024")
+  );
   const { width } = useWindowDimension();
   const parentRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({

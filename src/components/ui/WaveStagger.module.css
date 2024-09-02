@@ -1,0 +1,22 @@
+.main {
+  @apply w-full pointer-events-none;
+  > .wrapper {
+    @apply h-full overflow-hidden pointer-events-auto flex flex-col justify-start;
+    > .menuItem {
+      @apply h-1 mb-8 bg-foreground rounded-r-full text-right transition-all duration-250;
+      &:hover {
+        @apply bg-primary;
+      }
+      &:hover > a {
+        @apply text-primary;
+      }
+      > a {
+        @apply block font-impact text-2xl mt-0.5 uppercase transition-all duration-250;
+      }
+    }
+  }
+}
+
+.bar {
+  @apply h-1 mb-3.5 bg-foreground rounded-r-full;
+}

@@ -4,19 +4,7 @@ import styles from "./TopbarMenu.module.css";
 import Magnetic from "../Magnetic";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-
-interface MenuList {
-  label: string;
-  link: string;
-}
-
-const list: MenuList[] = [
-  { label: "Home", link: "/" },
-  { label: "About", link: "/about" },
-  { label: "Project", link: "project" },
-  { label: "Blog", link: "/blog" },
-  { label: "Contact", link: "/contact" },
-];
+import { mainMenuList } from "@/lib/constants";
 
 const variants: Variants = {
   initial: {
@@ -41,7 +29,7 @@ const variants: Variants = {
 const TopbarMenu = () => {
   return (
     <ul className={styles.menu}>
-      {list.map((item, index) => (
+      {mainMenuList.map((item, index) => (
         <Magnetic key={index}>
           <motion.li
             key={index}

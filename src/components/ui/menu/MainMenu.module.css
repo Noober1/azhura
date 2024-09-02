@@ -1,0 +1,7 @@
+.main {
+  @apply fixed top-0 left-0 w-3/4 sm:w-56 md:w-44 h-full z-10 pointer-events-none transition-colors duration-500 pr-4;
+
+  &.active {
+    @apply bg-background/50;
+  }
+}
