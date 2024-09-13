@@ -10,6 +10,8 @@ import photo3 from "@/images/photo3.jpg";
 import photo4 from "@/images/photo4.jpg";
 import photo5 from "@/images/photo5.jpg";
 import { TechIconsDark } from "@/lib/constants";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const horizontalScrollItem: HorizontalScrollItem[] = [
   {
@@ -87,13 +89,36 @@ const horizontalScrollItem: HorizontalScrollItem[] = [
 ];
 
 export const Project = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "start start"],
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [0.75, 1]);
+  const borderRadius = useTransform(
+    scrollYProgress,
+    [0, 0.9, 1],
+    ["3rem", "3rem", "0rem"]
+  );
+
   return (
-    <div className="mt-10 relative">
+    <motion.div
+      ref={ref}
+      className="mt-10 relative"
+      style={{
+        scale,
+      }}
+    >
       <ScrollToSide
         title="Project"
+        wrapperClassName="bg-foreground"
+        wrapperStyle={{
+          borderRadius,
+        }}
         description="Some project that i made so far"
         items={horizontalScrollItem}
       />
-    </div>
+    </motion.div>
   );
 };

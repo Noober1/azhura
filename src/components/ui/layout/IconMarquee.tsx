@@ -4,6 +4,7 @@ import styles from "./IconMarquee.module.css";
 import { motion, Variants } from "framer-motion";
 import React, { useRef } from "react";
 import Magnetic from "../Magnetic";
+import { twMerge } from "tailwind-merge";
 
 const ITEM_WIDTH = 7;
 
@@ -14,7 +15,12 @@ interface Items {
 
 export type IconMarqueeItems = Items[];
 
-const IconMarquee = ({ items }: { items: Items[] }) => {
+interface IconMarqueeProps {
+  items: Items[];
+  className?: string;
+}
+
+const IconMarquee = ({ items, className }: IconMarqueeProps) => {
   const scrollRef = useRef(-1 * items.length * ITEM_WIDTH + "rem");
   const Items = () => {
     return (
@@ -59,7 +65,7 @@ const IconMarquee = ({ items }: { items: Items[] }) => {
   };
 
   return (
-    <div className={styles.main}>
+    <div className={twMerge(styles.main, className)}>
       <motion.div
         animate="animate"
         className={styles.scrollWrapper}

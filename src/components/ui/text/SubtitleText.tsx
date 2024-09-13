@@ -52,7 +52,8 @@ const SubtitleText = ({
   const Text = createElement(
     as,
     {
-      className: "text-center mb-0 text-xl md:text-3xl font-inpin",
+      className:
+        "text-center mb-0 text-xl md:text-3xl font-inpin text-gradient",
       ...props,
     },
     TextRender()

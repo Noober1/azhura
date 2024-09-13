@@ -1,6 +1,7 @@
 import { nextui } from "@nextui-org/react";
 import tailwindTypograpy from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config: Config = {
   content: [
@@ -33,6 +34,16 @@ const config: Config = {
       },
     }),
     tailwindTypograpy,
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".text-gradient": {
+          background:
+            "linear-gradient(0deg, hsl(var(--ui-foreground) / 0.25) 0%, hsl(var(--ui-foreground)) 100%)",
+          color: "transparent",
+          backgroundClip: "text",
+        },
+      });
+    }),
   ],
 };
 export default config;

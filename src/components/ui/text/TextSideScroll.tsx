@@ -15,6 +15,7 @@ import styles from "./TextSideScroll.module.css";
 interface ParallaxProps {
   children: string | ReactNode;
   baseVelocity: number;
+  repeat?: number;
   className?: string;
   hoverEffect?: boolean;
   enableScrollDirectionChange?: boolean;
@@ -23,6 +24,7 @@ interface ParallaxProps {
 function TextSideScroll({
   children,
   baseVelocity = 100,
+  repeat = 5,
   className,
   hoverEffect = true,
   enableScrollDirectionChange = true,
@@ -84,7 +86,7 @@ function TextSideScroll({
         }}
         style={{ x }}
       >
-        {[...new Array(5)].map((v, i) => (
+        {[...new Array(repeat)].map((v, i) => (
           <span key={i}>
             {hoverEffect
               ? typeof children === "string"

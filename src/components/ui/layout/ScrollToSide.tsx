@@ -1,15 +1,20 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import styles from "./ScrollToSide.module.css";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, MotionStyle, useScroll, useTransform } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 import useWindowDimension from "@/hooks/useWindowDimension";
 import { StaticImageData } from "next/image";
 import ThumbnailCard from "@/components/ui/layout/ThumbnailCard";
 import TextSplitBouncing from "../text/TextSplitBouncing";
-import { Image } from "@nextui-org/react";
 import { useBreakpoint } from "@/hooks/useTailwindBreakpoints";
+import SubtitleText from "../text/SubtitleText";
+import TextSideScroll from "../text/TextSideScroll";
+import IconMarquee, { IconMarqueeItems } from "./IconMarquee";
+import { TechIconsDark } from "@/lib/constants";
+
+const darkIcons = Object.entries(TechIconsDark);
 
 export interface HorizontalScrollItem {
   title: string;
@@ -30,18 +35,22 @@ interface ScrollToSideProps {
   title: string;
   description: string;
   items: HorizontalScrollItem[];
+  wrapperStyle?: MotionStyle;
   hoverCallBack?: (imageSrc: string) => void;
+  wrapperClassName?: string;
 }
 
 const ScrollToSide = ({
   items,
   title,
   description,
-  hoverCallBack,
+  wrapperStyle,
+  wrapperClassName,
 }: ScrollToSideProps) => {
-  const [currentImage, setcurrentImage] = useState<HorizontalScrollItem>(
-    items[0]
-  );
+  const techItems: IconMarqueeItems = darkIcons.map(([item, value]) => ({
+    icon: value,
+    name: item,
+  }));
   const { width } = useWindowDimension();
   const isDesktop = useBreakpoint("md");
   const parentRef = useRef<HTMLElement>(null);
@@ -55,13 +64,6 @@ const ScrollToSide = ({
     ["0px", ITEM_WIDTH * items.length * -1 + width + "px"]
   );
 
-  const handleHoverThumbnail = (item: HorizontalScrollItem) => {
-    if (hoverCallBack) {
-      hoverCallBack(item.image.src);
-    }
-    setcurrentImage(item);
-  };
-
   return (
     <section
       ref={parentRef}
@@ -70,21 +72,29 @@ const ScrollToSide = ({
         height: isDesktop ? PARENT_HEIGHT : undefined,
       }}
     >
-      <div className={styles.contentWrapper}>
-        <div className={styles.backgroundImage}>
-          <Image
-            key={currentImage.title}
-            as={motion.img}
-            src={currentImage.image.src}
-            alt={currentImage.title}
+      <motion.div
+        className={twMerge(styles.contentWrapper, wrapperClassName)}
+        style={wrapperStyle}
+      >
+        <div className={styles.backgroundText}>
+          <TextSideScroll baseVelocity={-2}>PROJECT</TextSideScroll>
+          <IconMarquee
+            className="bg-foreground-100 mt-1 pointer-events-none"
+            items={techItems}
           />
+          <TextSideScroll baseVelocity={-2}>PROJECT</TextSideScroll>
+          <IconMarquee
+            className="bg-foreground-100 mt-1 pointer-events-none"
+            items={techItems}
+          />
+          <TextSideScroll baseVelocity={0.5}>CUCU RUHIYATNA</TextSideScroll>
         </div>
         <div className={styles.title}>
           <h3 className="hidden">{title}</h3>
           <TextSplitBouncing className={styles.bounce}>
             {title}
           </TextSplitBouncing>
-          <p>{description}</p>
+          <SubtitleText>{description}</SubtitleText>
         </div>
         <div className={styles.scrollWrapper}>
           <motion.div
@@ -99,7 +109,6 @@ const ScrollToSide = ({
           >
             {items.map((item, index) => (
               <motion.div
-                onMouseEnter={() => handleHoverThumbnail(item)}
                 key={index}
                 style={{ width: isDesktop ? ITEM_WIDTH : undefined }}
                 className={twMerge(styles.item)}
@@ -109,7 +118,7 @@ const ScrollToSide = ({
             ))}
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
