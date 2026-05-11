@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic"; // defaults to auto
 
 export async function GET() {
   try {
-    const res = prisma.user.createMany({
+    const res = await prisma.user.createMany({
       data: [
         {
           email: "cucu.ruhiyatna3@gmail.com",

@@ -127,6 +127,5 @@ export const mainMenuList: MenuList[] = [
   { label: "Home", link: "/" },
   { label: "About", link: "/about" },
   { label: "Project", link: "project" },
-  { label: "Blog", link: "/blog" },
   { label: "Contact", link: "/contact" },
 ];
