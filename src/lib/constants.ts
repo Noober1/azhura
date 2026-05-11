@@ -12,10 +12,10 @@ import { MdEmail } from "react-icons/md";
 
 export enum TechIconsLight {
   NodeJS = "nodejs.svg",
-  MySql = "mysql.svg",
+  MySql = "mysql-icon-light.svg",
   PostgreSQL = "postgresql.svg",
-  MongoDB = "mongodb.svg",
-  ReactJS = "react.svg",
+  MongoDB = "mongodb-icon-light.svg",
+  ReactJS = "react_light.svg",
   ExpressJS = "expressjs.svg",
   NestJS = "nestjs.svg",
   Bootstrap = "bootstrap.svg",
@@ -32,10 +32,10 @@ export enum TechIconsLight {
 
 export enum TechIconsDark {
   NodeJS = "nodejs.svg",
-  MySql = "mysql.svg",
+  MySql = "mysql-icon-dark.svg",
   PostgreSQL = "postgresql.svg",
-  MongoDB = "mongodb.svg",
-  ReactJS = "react.svg",
+  MongoDB = "mongodb-icon-dark.svg",
+  ReactJS = "react_dark.svg",
   ExpressJS = "expressjs_dark.svg",
   NestJS = "nestjs.svg",
   Bootstrap = "bootstrap.svg",
