@@ -8,7 +8,7 @@ import TWImage from "@/images/tw-image.jpg";
 import icon from "@/images/favicon.ico";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.BASE_URL),
+  metadataBase: new URL(process.env.BASE_URL ?? 'http://localhost:3000'),
   title: "Cucu Ruhiyatna",
   icons: icon.src,
   description:
